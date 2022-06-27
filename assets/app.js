@@ -9,7 +9,7 @@ const musicContent = document.querySelector(".row");
 const avatar = document.querySelector(".avatar img");
 const avatarItemAction = document.querySelector(".avatar-action img");
 const name = document.querySelector(".music-play .name");
-const nameItemAction = document.querySelector(".name-song-acttion");
+const nameItemAction = document.querySelector(".name-song-action");
 const creator = document.querySelector(".music-play .creator");
 const btnMode = document.querySelector(".fa-moon");
 const btnPlay = document.querySelector(".fa-play");
@@ -19,13 +19,13 @@ const btnPrev = document.querySelector(".btn-prev");
 const btnRandom = document.querySelector(".btn-random");
 const audio = document.querySelector("#audio");
 const progressBarTest = document.querySelector(".music-progress-bar");
-const timesong = document.querySelector(".duration-time");
+const timeSong = document.querySelector(".duration-time");
 const currentTimeDisplay = document.querySelector(".current-time");
 const list = document.querySelector(".list-music");
 const btnCloseList = document.querySelector(".btn-close");
 const btnOpenList = document.querySelector(".btn-list");
 const btnHeart = document.querySelector(".btn-heart i");
-const songlist = list.getElementsByTagName("li");
+const songList = list.getElementsByTagName("li");
 let songIndex = Math.floor(Math.random() * 101);
 let isRandom = false;
 let isLightMode = false;
@@ -101,7 +101,7 @@ loadSong = async(song) => {
     audio.src = arraySongs[song];
     audio.addEventListener('loadedmetadata', () => {
         const time = formatTime(audio.duration);
-        timesong.textContent = time;
+        timeSong.textContent = time;
     })
     let detailSong = document.querySelectorAll(".list-music-item");
     name.textContent = detailSong[song].getAttribute("data-name");
@@ -140,14 +140,14 @@ loadSong = async(song) => {
         });
     }
 
-    for (let i = 0; i < songlist.length; i++) {
-        songlist[i].classList.remove("active");
-        songlist[i].classList.remove("active-light-mode");
+    for (let i = 0; i < songList.length; i++) {
+        songList[i].classList.remove("active");
+        songList[i].classList.remove("active-light-mode");
     }
     if (isLightMode == false) {
-        songlist[song].classList.add("active");
+        songList[song].classList.add("active");
     } else {
-        songlist[song].classList.add("active-light-mode");
+        songList[song].classList.add("active-light-mode");
     }
 
 }
@@ -230,9 +230,9 @@ addLightMode = (e) => {
     document.querySelector('.music-list').classList.add('light-music-wrap');
     document.querySelector('.vip-2').classList.add('text-light');
 
-    let nameSongitem = document.querySelectorAll('.name-song-item');
-    for (let i = 0; i < nameSongitem.length; i++) {
-        nameSongitem[i].classList.add("light-text-color");
+    let nameSongItem = document.querySelectorAll('.name-song-item');
+    for (let i = 0; i < nameSongItem.length; i++) {
+        nameSongItem[i].classList.add("light-text-color");
     }
 }
 removeLightMode = () => {
@@ -247,9 +247,9 @@ removeLightMode = () => {
     document.querySelector('.name').classList.remove('light-text-color');
     document.querySelector('.vip-2').classList.remove('text-light');
     document.querySelector('.music-list').classList.remove('light-music-wrap');
-    let nameSongitem = document.querySelectorAll('.name-song-item');
-    for (let i = 0; i < nameSongitem.length; i++) {
-        nameSongitem[i].classList.remove("light-text-color");
+    let nameSongItem = document.querySelectorAll('.name-song-item');
+    for (let i = 0; i < nameSongItem.length; i++) {
+        nameSongItem[i].classList.remove("light-text-color");
     }
 }
 updateProgressTime = (e) => {

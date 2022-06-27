@@ -725,7 +725,7 @@ input[type=range]::-moz-range-thumb {
 	height: 100%;
 }
 
-.name-song-acttion {
+.name-song-action {
 	position: absolute;
 	left: 0;
 	color: var(--gray);
@@ -743,7 +743,7 @@ input[type=range]::-moz-range-thumb {
 	-ms-transform: translateX(-50%);
 	-o-transform: translateX(-50%);
 }
-.name-song-acttion{
+.name-song-action{
 	width: 200px;
 	background-size: red;
 

@@ -51,6 +51,7 @@ getSong = async() => {
     const result = getData();
     list.innerHTML = "";
     result.then(data => {
+        console.log(data);
         let all = data.songs.top100_VN;
         let nt = all[0].songs;
 

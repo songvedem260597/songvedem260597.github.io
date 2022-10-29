@@ -65,11 +65,12 @@ function startApp() {
 		videoBg.play();
 	}
 	playSong = () => {
+
+		audio.play();
+		isPlay = true;
 		avatar.style.animationPlayState = 'running';
 		btnPlay.classList.remove('fa-play');
 		btnPlay.classList.add('fa-pause');
-		audio.play();
-		isPlay = true;
 
 	}
 	pauseSong = () => {

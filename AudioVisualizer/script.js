@@ -12,10 +12,6 @@ var listVideoBg = [];
 var closeAudioContext = true;
 var i = 0;
 
-
-
-
-
 getSong = () => {
 	let songs = document.querySelectorAll(".list-music-item");
 	for (let i = 0; i < songs.length; i++) {

@@ -38,8 +38,14 @@ let arraySongs = [
   {
     name: "Hoàn Hảo",
     singer: "Bray",
-    path: "../assets/mp3/Hoan_Hao.mp3",
+    path: "../assets/mp3/hoan_hao.mp3",
     avatar: "../assets/avatar/hoan_hao.jpg",
+  },
+  {
+    name: "Người Em Cố Đô",
+    singer: "Rum x Đaa x Toann",
+    path: "../assets/mp3/em_co_do.mp3",
+    avatar: "../assets/avatar/em_co_do.jpg",
   },
 ];
 

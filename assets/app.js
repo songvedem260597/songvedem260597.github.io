@@ -30,6 +30,12 @@ let isHeart = false;
 
 let arraySongs = [
   {
+    name: "Enemy",
+    singer: "Imagine Dragons & JID",
+    path: "../assets/mp3/enemy.mp3",
+    avatar: "../assets/avatar/enemy.jpg",
+  },
+  {
     name: "Gods",
     singer: "NewJeans (뉴진스) ",
     path: "../assets/mp3/gods.mp3",

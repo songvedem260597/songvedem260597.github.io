@@ -4,15 +4,19 @@
     .music-player-wrap {
         width: 360px;
     }
+
     .music-player-wrap::before {
         box-shadow: none;
     }
+
     .music-play .music-controll {
         cursor: pointer;
     }
+
     .music-play .music-controll .btn-play i {
         margin-top: 2px;
     }
+
     .btn-mode, .btn-list {
         cursor: pointer;
     }
@@ -24,19 +28,24 @@
     .container {
         width: 50vw;
     }
+
     .wrap-time {
         margin-bottom: 20px;
     }
+
     .music-player-wrap {
         width: 360px;
         box-shadow: 0px 10px 25px -15px rgb(0 0 0 / 75%);
     }
+
     .music-play .info .name {
         font-size: 1.4rem;
     }
+
     .music-play .music-controll .btn-play i {
         font-size: 1.2rem;
     }
+
     .img-action-item {
         height: 120px;
         width: 120px;
@@ -49,40 +58,50 @@
     .container {
         width: 50vw;
     }
+
     .music-player-wrap {
         width: 360px;
     }
+
     .btn-mode, .btn-list {
         height: 45px;
         width: 45px;
         font-size: 0.9rem;
     }
+
     .title-playing p {
         font-size: 0.9rem;
     }
+
     .wrap-now-playing {
         padding-top: 40px;
     }
+
     .music-play .info {
         height: 150px;
     }
+
     .music-play .music-controll :nth-child(1) {
         font-size: 0.9rem;
         height: 20px;
         width: 20px;
     }
+
     .music-play .music-controll :nth-child(5) {
         height: 20px;
         width: 20px;
         font-size: 0.9rem;
     }
+
     .music-play .info .name {
         font-size: 1.4rem;
     }
+
     .music-play .music-controll .btn-play {
         height: 50px;
         width: 50px;
     }
+
     .music-play .music-controll .btn-play i {
         font-size: 1.2rem;
         top: 0;
@@ -95,58 +114,73 @@
     .container {
         width: 50vw;
     }
+
     .music-player-wrap {
         width: 360px;
     }
+
     .btn-mode, .btn-list {
         height: 38px;
         width: 38px;
         font-size: 0.8rem;
     }
+
     .title-playing p {
         font-size: 0.8rem;
     }
+
     .wrap-now-playing {
         padding-top: 40px;
     }
+
     .music-play .avatar img {
         width: 220px;
         height: 220px;
     }
+
     .img-shadow {
         width: 220px;
         height: 220px;
     }
+
     .music-play .info {
         height: 140px;
     }
+
     .music-play .music-controll {
         height: 130px;
     }
+
     .music-play .music-controll {
         width: 100%;
     }
+
     .music-play .music-controll :nth-child(1) {
         font-size: 0.9rem;
         height: 20px;
         width: 20px;
     }
+
     .music-play .music-controll :nth-child(5) {
         height: 20px;
         width: 20px;
         font-size: 0.9rem;
     }
+
     .music-play .info .name {
         font-size: 1.2rem;
     }
+
     .music-play .music-controll .btn-play {
         height: 50px;
         width: 50px;
     }
+
     .music-play .music-controll .btn-play i {
         font-size: 1.1rem;
         margin-top: 4px;
     }
+
     .copyright-vip-coder {
         font-size: 0.8rem;
     }
@@ -158,82 +192,103 @@
     .container {
         width: 70vw;
     }
+
     .music-player-wrap {
         width: 340px;
     }
+
     .btn-mode, .btn-list {
         height: 38px;
         width: 38px;
         font-size: 0.8rem;
     }
+
     .title-playing p {
         font-size: 0.8rem;
     }
+
     .wrap-now-playing {
         padding-top: 40px;
     }
+
     .wrap-time {
         font-size: 0.7rem;
     }
+
     .music-play .avatar img {
         width: 220px;
         height: 220px;
     }
+
     .img-shadow {
         width: 220px;
         height: 220px;
     }
+
     .music-play .info {
         height: 140px;
     }
+
     .music-play .music-controll {
         height: 130px;
     }
+
     input[type=range]::-webkit-slider-runnable-track {
         height: 5px;
     }
+
     input[type=range]::-webkit-slider-thumb {
         margin-top: -0.6rem;
         height: 23px;
         width: 23px;
     }
+
     .music-play .music-controll {
         width: 100%;
     }
+
     .music-play .music-controll :nth-child(1) {
         font-size: 0.9rem;
         height: 20px;
         width: 20px;
     }
+
     .music-play .music-controll :nth-child(2) {
         font-size: 1.2rem;
     }
+
     .music-play .music-controll :nth-child(4) {
         font-size: 1.2rem;
     }
+
     .music-play .music-controll :nth-child(5) {
         height: 20px;
         width: 20px;
         font-size: 0.9rem;
     }
+
     .music-play .info .name {
         font-size: 1.2rem;
     }
+
     .music-play .music-controll .btn-play {
         height: 45px;
         width: 45px;
     }
+
     .music-play .music-controll .btn-play i {
         font-size: 1rem;
         margin-top: 5px;
     }
+
     .copyright-vip-coder {
         font-size: 0.8rem;
-        margin-bottom: 20px;
     }
+
     .music-list ul {
         height: 330px;
     }
+
     .name-song-acttion {
         font-size: 0.8rem;
     }
@@ -245,88 +300,111 @@
     .container {
         width: 100vw;
     }
+
     .music-player-wrap {
         width: 310px;
     }
+
     .btn-mode, .btn-list {
         height: 38px;
         width: 38px;
         font-size: 0.8rem;
     }
+
     .title-playing p {
         font-size: 0.8rem;
     }
+
     .wrap-now-playing {
         padding-top: 40px;
     }
+
     .wrap-time {
         width: 100%;
         font-size: 0.7rem;
     }
+
     .music-play .avatar img {
         width: 210px;
         height: 210px;
     }
+
     .img-shadow {
         width: 210px;
         height: 210px;
     }
+
     .music-play .info {
         height: 140px;
     }
+
     .music-play .music-controll {
         height: 110px;
     }
+
     input[type=range]::-webkit-slider-runnable-track {
         height: 5px;
     }
+
     input[type=range]::-webkit-slider-thumb {
         margin-top: -0.6rem;
         height: 23px;
         width: 23px;
     }
+
     .music-play .music-controll {
         width: 100%;
     }
+
     .music-play .music-controll :nth-child(1) {
         font-size: 0.9rem;
         height: 20px;
         width: 20px;
     }
+
     .music-play .music-controll :nth-child(5) {
         height: 20px;
         width: 20px;
         font-size: 0.9rem;
     }
+
     .music-play .music-controll :nth-child(2) {
         font-size: 1.1rem;
     }
+
     .music-play .music-controll :nth-child(4) {
         font-size: 1.1rem;
     }
+
     .music-play .info .name {
         font-size: 1.2rem;
     }
+
     .music-play .music-controll .btn-play {
         height: 40px;
         width: 40px;
     }
+
     .music-play .music-controll .btn-play i {
         font-size: 0.9rem;
         top: 0;
     }
+
     .copyright-vip-coder {
         font-size: 0.8rem;
         margin-bottom: 20px;
     }
+
     input[type=range]::-webkit-slider-thumb {
         width: 18px !important;
         height: 18px !important;
         margin-top: -7px !important;
     }
+
     .music-list ul {
         height: 320px;
     }
+
     .name-song-acttion {
         font-size: 0.8rem;
     }

@@ -28,7 +28,8 @@ body {
 	width: 100%;
 	overflow-x: hidden;
 }
-a{
+
+a {
 	text-decoration: none;
 }
 
@@ -136,28 +137,31 @@ a{
 		-moz-transform: translateX(200%);
 		-ms-transform: translateX(200%);
 		-o-transform: translateX(200%);
-}
+	}
+
 	25% {
 		transform: translateY(200%);
 		-webkit-transform: translateY(200%);
 		-moz-transform: translateY(200%);
 		-ms-transform: translateY(200%);
 		-o-transform: translateY(200%);
-}
+	}
+
 	50% {
 		transform: translateX(0);
 		-webkit-transform: translateX(0);
 		-moz-transform: translateX(0);
 		-ms-transform: translateX(0);
 		-o-transform: translateX(0);
-}
+	}
+
 	75% {
 		transform: translateY(0);
 		-webkit-transform: translateY(0);
 		-moz-transform: translateY(0);
 		-ms-transform: translateY(0);
 		-o-transform: translateY(0);
-}
+	}
 }
 
 /*-Grid-1140-*/
@@ -165,6 +169,12 @@ a{
 .container {
 	position: relative;
 	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+}
+
+.wrapper-fixed {
+	position: fixed;
 }
 
 .music-player-wrap {
@@ -333,6 +343,7 @@ a{
 	border: 6px solid #16181B;
 	z-index: 5;
 	background-size: cover;
+	object-fit: cover;
 }
 
 @keyframes rotate {
@@ -342,14 +353,15 @@ a{
 		-moz-transform: rotate(0);
 		-ms-transform: rotate(0);
 		-o-transform: rotate(0);
-}
+	}
+
 	100% {
 		transform: rotate(360deg);
 		-webkit-transform: rotate(360deg);
 		-moz-transform: rotate(360deg);
 		-ms-transform: rotate(360deg);
 		-o-transform: rotate(360deg);
-}
+	}
 }
 
 
@@ -490,7 +502,7 @@ a{
 	margin: -4px;
 	border-radius: 100%;
 	background: rgb(29, 31, 35);
-	background: linear-gradient( 315deg, rgba(196, 38, 17, 1) 0%, rgba(230, 85, 12, 1) 100%);
+	background: linear-gradient(315deg, rgba(196, 38, 17, 1) 0%, rgba(230, 85, 12, 1) 100%);
 }
 
 .music-play .music-controll .btn-play i {
@@ -510,13 +522,12 @@ body.loading .wrap-pre-loader {
 	display: block;
 }
 
-/*-Copyright-*/
+/*---Copyright-----*/
 
 .copyright-vip-coder {
 	font-size: 0.9rem;
 	font-weight: 300;
 	text-align: center;
-	margin-top: 50px;
 	margin-bottom: 50px;
 }
 
@@ -610,7 +621,7 @@ input[type=range]::-moz-range-thumb {
 /*--Light theme--*/
 
 .light-theme {
-	background-color: #fff!important;
+	background-color: #fff !important;
 }
 
 .light-btn-wrap {
@@ -743,11 +754,13 @@ input[type=range]::-moz-range-thumb {
 	-ms-transform: translateX(-50%);
 	-o-transform: translateX(-50%);
 }
-.name-song-action{
+
+.name-song-action {
 	width: 200px;
 	background-size: red;
 
 }
+
 .avatar-action img {
 	height: 120px;
 	width: 120px;

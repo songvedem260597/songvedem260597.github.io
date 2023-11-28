@@ -1,7 +1,9 @@
+// --- DOM ELEMENTS ---
+const app = {};
 const musicContent = document.querySelector(".row");
 const avatar = document.querySelector(".avatar img");
 const avatarItemAction = document.querySelector(".avatar-action img");
-const name = document.querySelector(".music-play .name");
+const nameSong = document.querySelector(".music-play .name");
 const nameItemAction = document.querySelector(".name-song-action");
 const creator = document.querySelector(".music-play .creator");
 const btnMode = document.querySelector(".fa-moon");
@@ -19,26 +21,36 @@ const btnCloseList = document.querySelector(".btn-close");
 const btnOpenList = document.querySelector(".btn-list");
 const btnHeart = document.querySelector(".btn-heart i");
 const songList = list.getElementsByTagName("li");
+
+// --- DATA ---
 let songIndex = 0;
 let isRandom = false;
 let isLightMode = false;
 let isLoop = false;
 let isHeart = false;
 
-let arraySongs1 = [];
-
 let arraySongs = [
   {
-    name: "Click Pow Get Down",
-    singer: "Raftaar x Fortnite",
-    path: "../assets/gods.mp3",
+    name: "Gods",
+    singer: "NewJeans (뉴진스) ",
+    path: "../assets/mp3/gods.mp3",
+    avatar: "../assets/avatar/gods.jpg",
   },
   {
-    name: "Tu Phir Se Aana",
-    singer: "Raftaar x Salim Merchant x Karma",
-    path: "../assets/Hoan_Hao.mp3",
+    name: "Hoàn Hảo",
+    singer: "Bray",
+    path: "../assets/mp3/Hoan_Hao.mp3",
+    avatar: "../assets/mp3/gods.mp3",
   },
 ];
+
+// --- INITIALIZATION ---
+function init() {
+  getSong();
+  setupEventListeners();
+}
+
+setupEventListeners = () => {};
 
 function getSong() {
   list.innerHTML = "";
@@ -60,37 +72,23 @@ function getSong() {
 
 			</li>`;
   }
-  let songs = document.querySelectorAll(".list-music-item");
-  for (let i = 0; i < songs.length; i++) {
-    arraySongs1.push(songs[i].getAttribute("data-music"));
-  }
   loadSong();
 }
+
+getSong();
 
 function loadSong(song) {
   song = songIndex;
   audio.src = arraySongs[song].path;
-  audio.addEventListener("loadedmetadata", () => {
-    const time = formatTime(audio.duration);
-    timeSong.textContent = time;
-  });
-  //   let detailSong = document.querySelectorAll(".list-music-item");
-  //   name.textContent = detailSong[song].getAttribute("data-name");
-  //   nameItemAction.textContent = detailSong[song].getAttribute("data-name");
-  //   document.title =
-  //     detailSong[song].getAttribute("data-name") +
-  //     ", " +
-  //     detailSong[song].getAttribute("data-creator");
-  //   creator.textContent = detailSong[song].getAttribute("data-creator");
-  //   avatar.src = detailSong[song].getAttribute("data-avatar");
-  //   avatarItemAction.src = detailSong[song].getAttribute("data-avatar");
-  //   for (let i = 0; i < songList.length; i++) {
-  //     songList[i].classList.remove("active");
-  //     songList[i].classList.remove("active-light-mode");
-  //   }
+  nameSong.textContent = arraySongs[song].name;
+  nameItemAction.textContent = arraySongs[song].name;
+  document.title = arraySongs[song].name + ", " + arraySongs[song].singer;
+  creator.textContent = arraySongs[song].singer;
+  avatar.src = arraySongs[song].avatar;
+  avatarItemAction.src = arraySongs[song].avatar;
 }
 
-formatTime = (second) => {
+const formatTime = (second) => {
   let hours = Math.floor(second / 3600);
   let minutes = Math.floor((second - hours * 3600) / 60);
   let seconds = Math.floor(second - hours * 3600 - minutes * 60);
@@ -103,8 +101,12 @@ formatTime = (second) => {
   }
   return (hours !== 0 ? hours + ":" : "") + minutes + ":" + seconds;
 };
+audio.addEventListener("loadedmetadata", () => {
+  const time = formatTime(audio.duration);
+  timeSong.textContent = time;
+});
 
-addLoopSong = () => {
+const loopSong = () => {
   btnLoop.classList.remove("bx-remove-loop");
   btnLoop.classList.add("bx-add-loop");
   if (songIndex > arraySongs.length - 1) {
@@ -119,7 +121,6 @@ removeLoopSong = () => {
   }
 };
 playSong = () => {
-  loadSong();
   musicContent.classList.add("playing");
   avatar.style.animationPlayState = "running";
   avatarItemAction.style.animationPlayState = "running";
@@ -338,7 +339,7 @@ btnRandom.addEventListener("click", () => {
 btnLoop.addEventListener("click", () => {
   if (isLoop == false) {
     isLoop = true;
-    addLoopSong();
+    loopSong();
   } else if (isLoop == true) {
     isLoop = false;
     removeLoopSong();
@@ -369,3 +370,5 @@ function create_style(css) {
     style.appendChild(document.createTextNode(css));
   }
 }
+
+init();

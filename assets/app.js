@@ -40,7 +40,7 @@ let arraySongs = [
     name: "Hoàn Hảo",
     singer: "Bray",
     path: "../assets/mp3/Hoan_Hao.mp3",
-    avatar: "../assets/mp3/gods.mp3",
+    avatar: "../assets/avatar/hoan_hao.jpg",
   },
 ];
 
@@ -66,7 +66,6 @@ function getSong() {
 			<div class="song-item-info" >
 			<p class="name-song-item">${name}</p>
 			<p class="creator">${creator}</p>
-			
 			</div>
 			</div>
 

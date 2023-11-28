@@ -713,6 +713,9 @@ input[type=range]::-moz-range-thumb {
 .list-music-item-info img {
 	margin-left: 10px;
 	border-radius: 5px;
+	width: 50px;
+	height: 50px;
+	object-fit: cover;
 }
 
 .song-item-info .name-song-item {

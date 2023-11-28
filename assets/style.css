@@ -539,6 +539,7 @@ body.loading .wrap-pre-loader {
 
 .vip-1 {
 	color: var(--gray);
+	font-weight: 200;
 }
 
 .vip-2 {
@@ -546,6 +547,7 @@ body.loading .wrap-pre-loader {
 	padding-left: 2px;
 	padding-right: 2px;
 	padding-bottom: 3px;
+	font-weight: 200;
 }
 
 .wrap-progress-bar {

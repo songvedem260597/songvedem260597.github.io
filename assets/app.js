@@ -110,11 +110,15 @@ const setupEventListeners = () => {
   audio.addEventListener("ended", () => {
     btnHeart.classList.remove("heart");
     if (isLoop == true) {
-      loadSong();
-      playSong();
+      setTimeout(() => {
+        loadSong();
+        playSong();
+      }, 2000);
     } else if (isLoop == false) {
-      nextSong();
-      playSong();
+      setTimeout(() => {
+        nextSong();
+        playSong();
+      }, 2000);
     }
   });
 

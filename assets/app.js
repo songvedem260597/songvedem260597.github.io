@@ -36,6 +36,18 @@ let arraySongs = [
     avatar: "../assets/avatar/gods.jpg",
   },
   {
+    name: "Độc Ẩm",
+    singer: "Nguyễn Kiều Anh (Feliks Alvin Remix)",
+    path: "../assets/mp3/doc_am.mp3",
+    avatar: "../assets/avatar/doc_am.jpg",
+  },
+  {
+    name: "THIS WAY",
+    singer: " CARA x NOWAY x KHẮC HƯNG",
+    path: "../assets/mp3/this_way.mp3",
+    avatar: "../assets/avatar/this_way.jpg",
+  },
+  {
     name: "Hoàn Hảo",
     singer: "Bray",
     path: "../assets/mp3/hoan_hao.mp3",
@@ -46,6 +58,12 @@ let arraySongs = [
     singer: "Rum x Đaa x Toann",
     path: "../assets/mp3/em_co_do.mp3",
     avatar: "../assets/avatar/em_co_do.jpg",
+  },
+  {
+    name: "Đưa em về nhàa",
+    singer: "GREY D x CHILLIES",
+    path: "../assets/mp3/dua_em_ve_nha.mp3",
+    avatar: "../assets/avatar/dua_em_ve_nha.jpg",
   },
 ];
 

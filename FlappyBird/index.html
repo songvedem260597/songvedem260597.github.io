@@ -69,6 +69,15 @@
         }
       }
 
+      function updateCloud() {
+        cloud.x -= cloud.speed;
+
+        // Reset the cloud position when it goes off the left side
+        if (cloud.x + cloud.width < 0) {
+          cloud.x = canvas.width;
+        }
+      }
+
       // Game loop
       function gameLoop() {
         if (gameStatus === "playing") {
@@ -139,6 +148,7 @@
       function startGame() {
         gameStatus = "playing";
       }
+
 
       function drawBird() {
         ctx.fillStyle = bird.color;

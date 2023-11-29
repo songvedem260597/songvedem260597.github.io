@@ -12,6 +12,58 @@
     href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
   <style>
+    /*-Orther screen-*/
+
+    @media only screen and (min-width: 992px) {
+      #flappyCanvas {
+        min-width: 70vw;
+        min-height: 100vh;
+      }
+    }
+
+
+    @media only screen and (max-width: 991px) and (min-width: 850px) {
+      #flappyCanvas {
+        min-width: 991px;
+        min-height: 850px;
+      }
+    }
+
+
+
+    @media only screen and (max-width: 849px) and (min-width: 768px) {
+      #flappyCanvas {
+        min-width: 768px;
+        min-height: 650px;
+      }
+    }
+
+    /*-SM-*/
+
+    @media only screen and (max-width: 767px) and (min-width: 576px) {
+      #flappyCanvas {
+        min-width: 576px;
+        min-height: 450px;
+      }
+    }
+
+
+    @media only screen and (max-width:575px) and (min-width: 401px) {
+      #flappyCanvas {
+        min-width: 401px;
+        min-height: 250px;
+      }
+    }
+
+
+
+    @media only screen and (max-width: 400px) {
+      #flappyCanvas {
+        max-width: 400px;
+        min-height: 250px;
+      }
+    }
+
     body {
       display: flex;
       justify-content: center;
@@ -19,6 +71,11 @@
       width: 100%;
       height: 100vh;
       position: fixed;
+    }
+
+    #flappyCanvas {
+      max-width: 100vw;
+      max-height: 100vh;
     }
 
 
@@ -36,7 +93,7 @@
 </head>
 
 <body>
-  <canvas id="flappyCanvas" width="400" height="320"></canvas>
+  <canvas id="flappyCanvas" width="300" height="250"></canvas>
 
   <script>
     const canvas = document.getElementById("flappyCanvas");
@@ -245,9 +302,9 @@
 
       // Draw white text
       ctx.fillStyle = "#FFF";
-      ctx.font = "20px 'Pixelify Sans'";
+      ctx.font = "18px 'Pixelify Sans'";
 
-      const text = "Press any key or click to start";
+      const text = "Press space or click to start";
       const textWidth = ctx.measureText(text).width;
       const textHeight = 20; // Set the text height as needed
 

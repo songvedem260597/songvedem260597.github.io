@@ -144,17 +144,19 @@
     // Event listener for jumping
     document.addEventListener("keydown", jump);
     // Add click event listener to the canvas
-    canvas.addEventListener("click", jump);
+    document.addEventListener("click", jump);
+
+
 
     // Event listener for starting/restarting the game
-    window.addEventListener("keydown", function (event) {
+    document.addEventListener("keydown", function (event) {
       if (gameStatus === "not-started" || gameStatus === "game-over") {
         startGame();
         gameLoop();
       }
     });
 
-    window.addEventListener("click", function (event) {
+    document.addEventListener("click", function (event) {
       if (gameStatus === "not-started" || gameStatus === "game-over") {
         startGame();
         gameLoop();

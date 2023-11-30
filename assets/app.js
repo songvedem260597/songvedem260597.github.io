@@ -30,6 +30,12 @@ let isHeart = false;
 
 let arraySongs = [
   {
+    name: "Hoa Hải Đường",
+    singer: "Jack",
+    path: "../assets/mp3/hoa_hai_duong.mp3",
+    avatar: "../assets/avatar/hoa_hai_duong.png",
+  },
+  {
     name: "Enemy",
     singer: "Imagine Dragons & JID",
     path: "../assets/mp3/enemy.mp3",

@@ -12,15 +12,13 @@
     href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
   <style>
-    /*-Orther screen-*/
-
+    /*--- Other screen ---*/
     @media only screen and (min-width: 992px) {
       #flappyCanvas {
         min-width: 70vw;
         min-height: 100vh;
       }
     }
-
 
     @media only screen and (max-width: 991px) and (min-width: 850px) {
       #flappyCanvas {
@@ -29,8 +27,6 @@
       }
     }
 
-
-
     @media only screen and (max-width: 849px) and (min-width: 768px) {
       #flappyCanvas {
         min-width: 768px;
@@ -38,7 +34,7 @@
       }
     }
 
-    /*-SM-*/
+    /*----- SM ------*/
 
     @media only screen and (max-width: 767px) and (min-width: 576px) {
       #flappyCanvas {
@@ -47,15 +43,12 @@
       }
     }
 
-
     @media only screen and (max-width:575px) and (min-width: 401px) {
       #flappyCanvas {
         min-width: 401px;
         min-height: 250px;
       }
     }
-
-
 
     @media only screen and (max-width: 400px) {
       #flappyCanvas {
@@ -133,7 +126,6 @@
     let gameStatus = "not-started";
     let animationFrameId; // To store the ID of the animation frame
 
-
     const backgroundImage = new Image();
     backgroundImage.src = "./bg.jpg"; // Replace with the path to your background image
 
@@ -146,8 +138,6 @@
     document.addEventListener("keydown", jump);
     // Add click event listener to the canvas
     document.addEventListener("click", jump);
-
-
 
     // Event listener for starting/restarting the game
     document.addEventListener("keydown", function (event) {
@@ -175,7 +165,6 @@
     function gameLoop() {
       if (gameStatus === "playing") {
 
-        drawBackground();
         // Update
         bird.velocity += bird.gravity;
         bird.y += bird.velocity;
@@ -233,8 +222,6 @@
             }
           }
         }
-
-
 
 
         // Draw
@@ -296,8 +283,6 @@
       }
     }
 
-
-
     function drawStartScreen() {
       // Draw black background
       ctx.fillStyle = "#000";
@@ -316,9 +301,6 @@
 
       ctx.fillText(text, x, y);
     }
-
-
-
 
     function gameOver() {
       gameStatus = "game-over";

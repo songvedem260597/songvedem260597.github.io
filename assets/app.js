@@ -5,12 +5,12 @@ const avatarItemAction = document.querySelector(".avatar-action img");
 const nameSong = document.querySelector(".music-play .name");
 const nameItemAction = document.querySelector(".name-song-action");
 const creator = document.querySelector(".music-play .creator");
-const btnMode = document.querySelector(".fa-moon");
 const btnPlay = document.querySelector(".fa-play");
 const btnLoop = document.querySelector(".btn-loop");
 const btnNext = document.querySelector(".btn-next");
 const btnPrev = document.querySelector(".btn-prev");
 const btnRandom = document.querySelector(".btn-random");
+const btnState = document.querySelector(".btn-state");
 const audio = document.querySelector("#audio");
 const progressBar = document.querySelector(".music-progress-bar");
 const timeSong = document.querySelector(".duration-time");
@@ -20,15 +20,37 @@ const btnCloseList = document.querySelector(".btn-close");
 const btnOpenList = document.querySelector(".btn-list");
 const btnHeart = document.querySelector(".btn-heart i");
 const songList = list.getElementsByTagName("li");
+const containerLyrics = document.querySelector(".container-lyric-wrapper");
+const wrapperLyrics = document.querySelector(".music-lyric-wrapper");
+const containerAvatar = document.querySelector(".container-avatar-wrapper");
 
 // --- DATA ---
-let songIndex = 0;
-let isRandom = false;
-let isLightMode = false;
-let isLoop = false;
-let isHeart = false;
+
+const state = {
+  lyric: null,
+  isRandom: false,
+  isActiveSong: false,
+  songIndex: 0,
+  valueVolume: 0.5,
+  isPlayLyrics: false,
+  isLoop: false,
+};
 
 let arraySongs = [
+  {
+    name: "Somewhere Only We know",
+    singer: "Rhianne Cover",
+    path: "../assets/mp3/somewhere_only_we_know.mp3",
+    avatar: "../assets/avatar/somewhere_only_we_know.jpg",
+    lrc: "../assets/lrc/somewhere_only_we_know.lrc",
+  },
+  {
+    name: "Gods",
+    singer: "NewJeans (뉴진스)",
+    path: "../assets/mp3/gods.mp3",
+    avatar: "../assets/avatar/gods.jpg",
+    lrc: "../assets/lrc/gods.lrc",
+  },
   {
     name: "Hoa Hải Đường",
     singer: "Jack",
@@ -41,12 +63,7 @@ let arraySongs = [
     path: "../assets/mp3/enemy.mp3",
     avatar: "../assets/avatar/enemy.jpg",
   },
-  {
-    name: "Gods",
-    singer: "NewJeans (뉴진스) ",
-    path: "../assets/mp3/gods.mp3",
-    avatar: "../assets/avatar/gods.jpg",
-  },
+
   {
     name: "Độc Ẩm",
     singer: "Nguyễn Kiều Anh (Feliks Alvin Remix)",
@@ -83,6 +100,11 @@ let arraySongs = [
 const init = () => {
   getSong();
   setupEventListeners();
+  initState();
+};
+
+const initState = () => {
+  containerLyrics.style.visibility = "hidden";
 };
 
 const setupEventListeners = () => {
@@ -97,30 +119,6 @@ const setupEventListeners = () => {
       progressBar.value = progressPercent;
       var val = progressPercent;
       if (val >= 90 && val <= 99) val = val - 1;
-      if (isLightMode == false)
-        create_style(
-          "input[type=range]::-webkit-slider-runnable-track { background: linear-gradient(90deg, rgba(218,80,25,1) 0%, rgba(184,160,34,1) " +
-            val +
-            "%, #1D2021 " +
-            val +
-            "%, #1D2021 100%) !important;}"
-        );
-      else
-        create_style(
-          "input[type=range]::-webkit-slider-runnable-track { background: linear-gradient(90deg, rgba(218,80,25,1) 0%, rgba(184,160,34,1) " +
-            val +
-            "%, var(--bg-light) " +
-            val +
-            "%, var(--bg-light) 100%) !important;box-shadow: inset 2px 2px 3px 1px rgba(var(--shadow-color), .1), inset -2px -2px 3px 0px rgba(var(--light-color), .1)!important; border-color:#f1f1f1 !important;}"
-        );
-    }
-  };
-  progressBar.onchange = function (e) {
-    const seekTime = (audio.duration / 100) * e.target.value;
-    audio.currentTime = seekTime;
-    var val = e.target.value;
-    if (val >= 90 && val <= 99) val = val - 1;
-    if (isLightMode == false)
       create_style(
         "input[type=range]::-webkit-slider-runnable-track { background: linear-gradient(90deg, rgba(218,80,25,1) 0%, rgba(184,160,34,1) " +
           val +
@@ -128,23 +126,29 @@ const setupEventListeners = () => {
           val +
           "%, #1D2021 100%) !important;}"
       );
-    else
-      create_style(
-        "input[type=range]::-webkit-slider-runnable-track { background: linear-gradient(90deg, rgba(218,80,25,1) 0%, rgba(184,160,34,1) " +
-          val +
-          "%, var(--bg-light) " +
-          val +
-          "%,  var(--bg-light) 100%) !important;box-shadow: inset 2px 2px 3px 1px rgba(var(--shadow-color), .3), inset -2px -2px 3px 0px rgba(var(--light-color), .1) !important; border-color:#f1f1f1  !important;}"
-      );
+    }
+  };
+  progressBar.onchange = function (e) {
+    const seekTime = (audio.duration / 100) * e.target.value;
+    audio.currentTime = seekTime;
+    var val = e.target.value;
+    if (val >= 90 && val <= 99) val = val - 1;
+    create_style(
+      "input[type=range]::-webkit-slider-runnable-track { background: linear-gradient(90deg, rgba(218,80,25,1) 0%, rgba(184,160,34,1) " +
+        val +
+        "%, #1D2021 " +
+        val +
+        "%, #1D2021 100%) !important;}"
+    );
   };
   audio.addEventListener("ended", () => {
     btnHeart.classList.remove("heart");
-    if (isLoop == true) {
+    if (state.isLoop == true) {
       setTimeout(() => {
         loadSong();
         playSong();
       }, 2000);
-    } else if (isLoop == false) {
+    } else if (state.isLoop == false) {
       setTimeout(() => {
         nextSong();
         playSong();
@@ -171,22 +175,19 @@ const setupEventListeners = () => {
     }
   });
 
-  btnMode.addEventListener("click", () => {
-    if (isLightMode == false) {
-      document.querySelector(".active").classList.add("active-light-mode");
-      document.querySelector(".active-light-mode").classList.remove("active");
-      playSong();
-      btnMode.classList.remove("fa-moon");
-      btnMode.classList.add("fa-sun");
-      isLightMode = true;
-      addLightMode();
+  btnState.addEventListener("click", () => {
+    if (state.isPlayLyrics == false) {
+      state.isPlayLyrics = true;
+      containerAvatar.style.visibility = "hidden";
+      containerLyrics.style.visibility = "visible";
+      btnState.innerHTML = "<i class='fas fa-music'></i>";
+      const iconMusic = document.querySelector(".fa-music");
+      iconMusic.style.paddingRight = "5px";
     } else {
-      document.querySelector(".active-light-mode").classList.add("active");
-      document.querySelector(".active").classList.remove("active-light-mode");
-      btnMode.classList.add("fa-moon");
-      btnMode.classList.remove("fa-sun");
-      isLightMode = false;
-      removeLightMode();
+      state.isPlayLyrics = false;
+      containerAvatar.style.visibility = "visible";
+      containerLyrics.style.visibility = "hidden";
+      btnState.innerHTML = "<i class='fas fa-microphone'></i>";
     }
   });
   btnPlay.addEventListener("click", () => {
@@ -218,31 +219,92 @@ const setupEventListeners = () => {
     }
   });
   btnLoop.addEventListener("click", () => {
-    if (isLoop == false) {
-      isLoop = true;
+    if (state.isLoop == false) {
+      state.isLoop = true;
       loopSong();
-    } else if (isLoop == true) {
-      isLoop = false;
+    } else if (state.isLoop == true) {
+      state.isLoop = false;
       removeLoopSong();
     }
   });
   list.addEventListener("click", (e) => {
-    songIndex = e.target.closest("li").getAttribute("data-index");
+    state.songIndex = e.target.closest("li").getAttribute("data-index");
     btnHeart.classList.remove("heart");
-    isHeart = false;
-    loadSong(songIndex);
+    state.isHeart = false;
+    loadSong(state.songIndex);
     playSong();
   });
 };
 
+const parseLyric = (text) => {
+  const lines = text
+    .split("#")
+    .filter((line) => /\[\d{2}:\d{2}.\d{2,3}\]/.test(line));
+
+  const result = lines.map((line) => {
+    const [timeTag, value] = line.split("]");
+    const [minutes, seconds] = timeTag.slice(1).split(":").map(parseFloat);
+    const timeInSeconds = minutes * 60 + seconds;
+    return [timeInSeconds, value.trim()];
+  });
+  result.sort((a, b) => a[0] - b[0]);
+  return result;
+};
+
+const appendLyric = (lyric) => {
+  lyric.forEach((v, i) => {
+    $("<p id='line-" + i + "'>")
+      .html(v[1])
+      .appendTo(".lyric-wrap")
+      .on("click", () => handleClickLyric(v[0]));
+  });
+};
+
+const resetContainerLyric = () => {
+  wrapperLyrics.innerHTML = '<div class="lyric-wrap"></div>';
+};
+
+const handleClickLyric = (timestamp) => {
+  if (typeof audio !== "undefined") {
+    audio.currentTime = timestamp;
+  }
+};
+
+const getLrc = (url) => {
+  fetch(url)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.text();
+    })
+    .then((data) => {
+      let text = data
+        .replace(/\n/g, "#")
+        .replace(/\r/g, "")
+        .replace(/######/g, "#")
+        .replace(/####/g, "#")
+        .replace(/###/g, "#")
+        .replace(/##/g, "#");
+      state.lyric = parseLyric(text);
+      appendLyric(state.lyric);
+    })
+    .catch((error) => {
+      document.getElementsByClassName("lyric-wrap")[0].innerHTML =
+        "<p class='empty-lyrics'> Bài hát hiện tại chưa có lời </p>";
+    });
+};
+
 const loadSong = (song) => {
-  song = songIndex;
+  song = state.songIndex;
   audio.src = arraySongs[song].path;
   nameSong.textContent = arraySongs[song].name;
   nameItemAction.textContent = arraySongs[song].name;
   document.title = arraySongs[song].name + ", " + arraySongs[song].singer;
   creator.textContent = arraySongs[song].singer;
   avatar.src = arraySongs[song].avatar;
+  resetContainerLyric();
+  getLrc(arraySongs[song].lrc);
   avatarItemAction.src = arraySongs[song].avatar;
 };
 
@@ -286,6 +348,28 @@ const create_style = (css) => {
   }
 };
 
+const updateLyrics = () => {
+  const currentTime = audio.currentTime;
+
+  if (audio.duration) {
+    for (let i = 0, l = state.lyric.length; i < l; i++) {
+      const [timestamp, text] = state.lyric[i];
+
+      if (currentTime > timestamp) {
+        const lineId = `#line-${i}`;
+        const currentLine = $(lineId);
+
+        if (currentLine.length > 0) {
+          const anchor = currentLine.position().top;
+          $(".current-line").attr("class", "");
+          currentLine.attr("class", "current-line");
+          $(".lyric-wrap").css("top", `${-anchor}px`);
+        }
+      }
+    }
+  }
+};
+
 const formatTime = (second) => {
   let hours = Math.floor(second / 3600);
   let minutes = Math.floor((second - hours * 3600) / 60);
@@ -303,16 +387,16 @@ const formatTime = (second) => {
 const loopSong = () => {
   btnLoop.classList.remove("bx-remove-loop");
   btnLoop.classList.add("bx-add-loop");
-  if (songIndex > arraySongs.length - 1) {
-    songIndex = 0;
+  if (state.songIndex > arraySongs.length - 1) {
+    state.songIndex = 0;
   }
 };
 
 const removeLoopSong = () => {
   btnLoop.classList.add("bx-remove-loop");
   btnLoop.classList.remove("bx-add-loop");
-  if (songIndex > arraySongs.length - 1) {
-    songIndex = 0;
+  if (state.songIndex > arraySongs.length - 1) {
+    state.songIndex = 0;
   }
 };
 const playSong = () => {
@@ -333,84 +417,42 @@ const pauseSong = () => {
 };
 
 const addRandomSong = () => {
-  songIndex = Math.floor(Math.random() * 101);
+  state.songIndex = Math.floor(Math.random() * 101);
   btnRandom.classList.remove("bx-remove-random");
   btnRandom.classList.add("bx-add-random");
-  if (songIndex > arraySongs.length - 1) {
-    songIndex = 0;
+  if (state.songIndex > arraySongs.length - 1) {
+    state.songIndex = 0;
   }
 };
 
 const removeRandomSong = () => {
   btnRandom.classList.add("bx-remove-random");
   btnRandom.classList.remove("bx-add-random");
-  if (songIndex > arraySongs.length - 1) {
-    songIndex = 0;
+  if (state.songIndex > arraySongs.length - 1) {
+    state.songIndex = 0;
   }
 };
 const nextSong = () => {
-  songIndex++;
-  if (songIndex > arraySongs.length - 1) {
-    songIndex = 0;
+  state.songIndex++;
+  if (state.songIndex > arraySongs.length - 1) {
+    state.songIndex = 0;
   }
-  loadSong(songIndex);
+  loadSong(state.songIndex);
 };
 
 const prevSong = () => {
-  songIndex--;
-  if (songIndex < 0) {
-    songIndex = arraySongs.length - 1;
+  state.songIndex--;
+  if (state.songIndex < 0) {
+    state.songIndex = arraySongs.length - 1;
   }
-  loadSong(songIndex);
+  loadSong(state.songIndex);
 };
 
-const addLightMode = (e) => {
-  document.body.classList.add("light-theme");
-  document
-    .querySelector(".music-player-wrap")
-    .classList.add("light-music-wrap::before");
-  document
-    .querySelector(".music-player-wrap")
-    .classList.add("light-music-wrap");
-  document.querySelector(".btn-list").classList.add("light-btn-wrap");
-  document.querySelector(".btn-mode").classList.add("light-btn-wrap");
-  document.querySelector(".btn-play").classList.add("light-btn-play-wrap");
-  document.querySelector(".btn-heart").classList.add("light-btn-wrap");
-  document.querySelector(".btn-close").classList.add("light-btn-wrap");
-  document.querySelector(".name").classList.add("light-text-color");
-  document.querySelector(".music-list").classList.add("light-music-wrap");
-  document.querySelector(".vip-2").classList.add("text-light");
-
-  let nameSongItem = document.querySelectorAll(".name-song-item");
-  for (let i = 0; i < nameSongItem.length; i++) {
-    nameSongItem[i].classList.add("light-text-color");
-  }
-};
-const removeLightMode = () => {
-  document.body.classList.remove("light-theme");
-  document
-    .querySelector(".music-player-wrap")
-    .classList.remove("light-music-wrap::before");
-  document
-    .querySelector(".music-player-wrap")
-    .classList.remove("light-music-wrap");
-  document.querySelector(".btn-list").classList.remove("light-btn-wrap");
-  document.querySelector(".btn-mode").classList.remove("light-btn-wrap");
-  document.querySelector(".btn-play").classList.remove("light-btn-play-wrap");
-  document.querySelector(".btn-heart").classList.remove("light-btn-wrap");
-  document.querySelector(".btn-close").classList.remove("light-btn-wrap");
-  document.querySelector(".name").classList.remove("light-text-color");
-  document.querySelector(".vip-2").classList.remove("text-light");
-  document.querySelector(".music-list").classList.remove("light-music-wrap");
-  let nameSongItem = document.querySelectorAll(".name-song-item");
-  for (let i = 0; i < nameSongItem.length; i++) {
-    nameSongItem[i].classList.remove("light-text-color");
-  }
-};
 const updateProgressTime = (e) => {
   const { currentTime, duration } = e.srcElement;
   currentTimeDisplay.textContent = formatTime(currentTime);
 };
 
+audio.addEventListener("timeupdate", updateLyrics);
 // --- RUN INITIALIZATION ---
 init();

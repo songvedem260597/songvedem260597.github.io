@@ -323,7 +323,7 @@ const module = {
           const anchor = currentLine.position().top;
           $(".current-line").attr("class", "");
           currentLine.attr("class", "current-line");
-          $(".lyric").css("top", `${115 - anchor}px`);
+          $(".lyric").css("top", `${225 - anchor}px`);
         }
       }
     }

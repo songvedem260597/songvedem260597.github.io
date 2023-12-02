@@ -27,9 +27,10 @@
 		<div class="row wrapper-fixed">
 			<div class="music-player-wrap col-4 col-lg-9 col-md-11 col-xsm-12 ">
 				<div class="music-play">
-					<div class="wrap-now-playing">
-						<div class="wrapp-title row col-xxm-12">
-							<div class="btn-mode now-playing-title-icon btn "><i class="fas fa-moon "></i>
+
+					<div class="wrap-now-playing ">
+						<div class="wrapper-title row col-xxm-12">
+							<div class="btn-state now-playing-title-icon btn"><i class="fas fa-microphone"></i>
 							</div>
 							<div class="title-playing col-6 col-lg-6 col-md-6 col-sm-6 col-xsm-8 ">
 								<p>Now Playing</p>
@@ -42,16 +43,25 @@
 							<span class="duration-time "></span>
 						</div>
 					</div>
-					<div class="avatar col-12 col-lg-12 col-md-12 col-sm-12 col-xsm-12">
 
-						<div class="img-shadow img-action-index"></div>
-						<img onerror="this.src='/img/singer_default.jpg'" src="">
+					<div class="container-lyric-wrapper">
+						<div class="music-lyric-wrapper" id="list-lyric-wrapper">
+							<div class="lyric-wrap">
+							</div>
+						</div>
 					</div>
-					<div class="info col-12 col-lg-12 col-md-12 col-sm-12 col-xsm-12 col-xxm-12">
-						<div class="name "></div>
-						<div class="creator "></div>
+					<div class="wrapper-avatar-song container-avatar-wrapper ">
+						<div class="avatar col-12 col-lg-12 col-md-12 col-sm-12 col-xsm-12">
+							<div class="img-shadow img-action-index"></div>
+							<img onerror="this.src='/img/singer_default.jpg'" src="">
+						</div>
+						<div class="info col-12 col-lg-12 col-md-12 col-sm-12 col-xsm-12 col-xxm-12">
+							<div class="name "></div>
+							<div class="creator "></div>
+						</div>
+						<audio id="audio" src=""></audio>
 					</div>
-					<audio id="audio" src=""></audio>
+
 					<div class="music-bar col-12  col-12 col-lg-12 col-md-12 col-sm-12 col-xsm-12 col-xxm-12">
 						<div class="wrap-progress-bar">
 							<input class="music-progress-bar" type="range" value="0" step="1" min="0" max="100" />
@@ -66,7 +76,6 @@
 						</div>
 					</div>
 				</div>
-
 				<div class="music-list" id="list-song">
 					<div class="song-action">
 						<p class="name-song-action"></p>
@@ -93,6 +102,8 @@
 					</a>
 				</div>
 			</div>
+
+
 
 		</div>
 

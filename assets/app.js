@@ -190,6 +190,7 @@ const setupEventListeners = () => {
       btnState.innerHTML = "<i class='fas fa-microphone'></i>";
     }
   });
+
   btnPlay.addEventListener("click", () => {
     if (musicContent.classList.contains("playing")) {
       pauseSong();
@@ -197,18 +198,21 @@ const setupEventListeners = () => {
       playSong();
     }
   });
+
   btnNext.addEventListener("click", () => {
     nextSong();
     setTimeout(() => {
       playSong();
     }, 400);
   });
+
   btnPrev.addEventListener("click", () => {
     prevSong();
     setTimeout(() => {
       playSong();
     }, 400);
   });
+
   btnRandom.addEventListener("click", () => {
     if (isRandom == false) {
       isRandom = true;
@@ -218,6 +222,7 @@ const setupEventListeners = () => {
       removeRandomSong();
     }
   });
+
   btnLoop.addEventListener("click", () => {
     if (state.isLoop == false) {
       state.isLoop = true;
@@ -227,6 +232,7 @@ const setupEventListeners = () => {
       removeLoopSong();
     }
   });
+
   list.addEventListener("click", (e) => {
     state.songIndex = e.target.closest("li").getAttribute("data-index");
     btnHeart.classList.remove("heart");
@@ -240,7 +246,6 @@ const parseLyric = (text) => {
   const lines = text
     .split("#")
     .filter((line) => /\[\d{2}:\d{2}.\d{2,3}\]/.test(line));
-
   const result = lines.map((line) => {
     const [timeTag, value] = line.split("]");
     const [minutes, seconds] = timeTag.slice(1).split(":").map(parseFloat);
@@ -350,7 +355,6 @@ const create_style = (css) => {
 
 const updateLyrics = () => {
   const currentTime = audio.currentTime;
-
   if (audio.duration) {
     for (let i = 0, l = state.lyric.length; i < l; i++) {
       const [timestamp, text] = state.lyric[i];
@@ -399,6 +403,7 @@ const removeLoopSong = () => {
     state.songIndex = 0;
   }
 };
+
 const playSong = () => {
   musicContent.classList.add("playing");
   avatar.style.animationPlayState = "running";

@@ -260,8 +260,9 @@ a {
 
 .lyric-wrap p {
 	font-family: 'Oswald';
-	font-weight: 200;
+	font-weight: 300;
 	font-size: 20px;
+	text-align: center;
 }
 
 /*--CSS Event Click--*/

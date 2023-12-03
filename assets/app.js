@@ -34,6 +34,7 @@ const state = {
   valueVolume: 0.5,
   isPlayLyrics: false,
   isLoop: false,
+  isHeart: false,
 };
 
 let arraySongs = [
@@ -43,6 +44,13 @@ let arraySongs = [
     path: "../assets/mp3/somewhere_only_we_know.mp3",
     avatar: "../assets/avatar/somewhere_only_we_know.jpg",
     lrc: "../assets/lrc/somewhere_only_we_know.lrc",
+  },
+  {
+    name: "At My Worst",
+    singer: "Pink Sweat",
+    path: "../assets/mp3/at_my_worst.mp3",
+    avatar: "../assets/avatar/at_my_worst.jpg",
+    lrc: "../assets/lrc/at_my_worst.lrc",
   },
   {
     name: "Gods",
@@ -166,12 +174,12 @@ const setupEventListeners = () => {
     document.getElementById("list-song").style.visibility = "visible";
   });
   btnHeart.addEventListener("click", () => {
-    if (isHeart == false) {
+    if (state.isHeart == false) {
       btnHeart.classList.add("heart");
-      isHeart = true;
+      state.isHeart = true;
     } else {
       btnHeart.classList.remove("heart");
-      isHeart = false;
+      state.isHeart = false;
     }
   });
 

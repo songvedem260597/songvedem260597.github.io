@@ -13,10 +13,6 @@
         cursor: pointer;
     }
 
-    .music-play .music-controll .btn-play i {
-        margin-top: 2px;
-    }
-
     .btn-mode, .btn-list {
         cursor: pointer;
     }
@@ -278,7 +274,7 @@
 
     .music-play .music-controll .btn-play i {
         font-size: 1rem;
-        margin-top: 5px;
+        margin-top: 1px;
     }
 
     .copyright-vip-coder {

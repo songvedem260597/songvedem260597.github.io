@@ -62,7 +62,7 @@
 					<div class="wrapper-avatar-song container-avatar-wrapper">
 						<div class="avatar flex-center col-12 col-lg-12 col-md-12 col-sm-12 col-xsm-12">
 							<div class="flex-center border-wrapper-img-action">
-								<img onerror="this.src='/img/singer_default.jpg'" src="">
+								<img class="img-action" onerror="this.src='/img/singer_default.jpg'" src="">
 							</div>
 						</div>
 						<div class="info col-12 col-lg-12 col-md-12 col-sm-12 col-xsm-12 col-xxm-12">
@@ -79,9 +79,17 @@
 
 						<div class="music-controll col-12  col-12 col-lg-12 col-md-12 col-sm-12 col-xsm-12 col-xxm-12">
 							<ion-icon name="shuffle-outline" class="btn-random"></ion-icon>
-							<i class="fas fa-step-backward btn-prev"></i>
+							<div class="wrapper-btn-prev flex-center">
+								<div class="inner_btn_prev flex-center">
+									<i class="fas fa-step-backward btn-prev"></i>
+								</div>
+							</div>
 							<div class="btn-play"><i class="fas fa-play flex-center"></i></div>
-							<i class="fas fa-step-forward btn-next"></i>
+							<div class="wrapper-btn-next  flex-center">
+								<div class="inner_btn_next flex-center">
+									<i class="fas fa-step-forward btn-next"></i>
+								</div>
+							</div>
 							<ion-icon name="infinite-outline" class="btn-loop"></ion-icon>
 						</div>
 					</div>

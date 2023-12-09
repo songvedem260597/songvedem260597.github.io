@@ -19,13 +19,11 @@ const list = document.querySelector('.list-music')
 const btnCloseList = document.querySelector('.btn-close')
 const btnOpenList = document.querySelector('.btn-list')
 const btnHeart = document.querySelector('.btn-heart i')
-const btnMode = document.querySelector('.btn-state')
+const btnMode = document.querySelector('.toggle')
 const songList = list.getElementsByTagName('li')
 const containerLyrics = document.querySelector('.container-lyric-wrapper')
 const wrapperLyrics = document.querySelector('.music-lyric-wrapper')
 const containerAvatar = document.querySelector('.container-avatar-wrapper')
-const activeElement = document.querySelector('.active')
-const activeLightModeElement = document.querySelector('.active-light-mode')
 
 // --- DATA ---
 
@@ -132,13 +130,7 @@ const setupEventListeners = () => {
             progressBar.value = progressPercent
             var val = progressPercent
             if (val >= 90 && val <= 99) val = val - 1
-            create_style(
-                'input[type=range]::-webkit-slider-runnable-track { background: linear-gradient(90deg, rgba(218,80,25,1) 0%, rgba(184,160,34,1) ' +
-                    val +
-                    '%, #1D2021 ' +
-                    val +
-                    '%, #1D2021 100%) !important;}',
-            )
+            updateProgressBarStyles(val)
         }
     }
 
@@ -146,13 +138,7 @@ const setupEventListeners = () => {
         state.isDragging = true
         var val = e.target.value
         if (val >= 90 && val <= 99) val = val - 1
-        create_style(
-            'input[type=range]::-webkit-slider-runnable-track { background: linear-gradient(90deg, rgba(218,80,25,1) 0%, rgba(184,160,34,1) ' +
-                val +
-                '%, #1D2021 ' +
-                val +
-                '%, #1D2021 100%) !important;}',
-        )
+        updateProgressBarStyles(val)
     })
     progressBar.onchange = function (e) {
         state.isDragging = false
@@ -160,13 +146,7 @@ const setupEventListeners = () => {
         audio.currentTime = seekTime
         var val = e.target.value
         if (val >= 90 && val <= 99) val = val - 1
-        create_style(
-            'input[type=range]::-webkit-slider-runnable-track { background: linear-gradient(90deg, rgba(218,80,25,1) 0%, rgba(184,160,34,1) ' +
-                val +
-                '%, #1D2021 ' +
-                val +
-                '%, #1D2021 100%) !important;}',
-        )
+        updateProgressBarStyles(val)
     }
     audio.addEventListener('ended', () => {
         btnHeart.classList.remove('heart')
@@ -199,6 +179,13 @@ const setupEventListeners = () => {
         } else {
             btnHeart.classList.remove('heart')
             state.isHeart = false
+        }
+    })
+
+    document.addEventListener('keydown', function (event) {
+        if (event.keyCode === 32) {
+            event.preventDefault()
+            playSong()
         }
     })
 
@@ -292,6 +279,41 @@ const appendLyric = (lyric) => {
     })
 }
 
+const updateProgressBarStyles = (val) => {
+    if (val >= 90 && val <= 99) val = val - 1
+
+    const trackBackground = !state.isLightMode
+        ? 'linear-gradient(90deg, rgba(218, 80, 25, 1) 0%, rgba(184, 160, 34, 1) ' + val + '%, #1D2021 ' + val + '%, #1D2021 100%)'
+        : 'linear-gradient(90deg, rgb(116, 144, 100) 0%, rgb(116, 144, 100) ' + val + '%, var(--bg-light) ' + val + '%, var(--bg-light) 100%)'
+
+    const thumbColor = !state.isLightMode ? 'rgba(184, 160, 34, 1)' : '#749064'
+    const boxShadowStyle = !state.isLightMode ? '' : 'box-shadow: inset 2px 2px 3px 1px rgba(var(--shadow-color), .1), inset -2px -2px 3px 0px rgba(var(--light-color), .1)'
+    const borderColorStyle = !state.isLightMode ? '' : 'border-color: #f1f1f1'
+    const thumbBorder = !state.isLightMode ? '6px solid #222222' : '6px solid #ffffff'
+
+    const style = `
+        input[type=range]::-webkit-slider-runnable-track {
+            background: ${trackBackground} !important;
+            ${boxShadowStyle} !important;
+            ${borderColorStyle} !important;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            background-color: ${thumbColor} !important;
+            border: ${thumbBorder} !important;
+        }
+    `
+
+    create_style(style)
+}
+
+const changeStyleProgressBar = () => {
+    const progressPercent = (audio.currentTime / audio.duration) * 100
+    progressBar.value = progressPercent
+    var val = progressPercent
+    if (val >= 90 && val <= 99) val = val - 1
+    updateProgressBarStyles(val)
+}
 const resetContainerLyric = () => {
     wrapperLyrics.innerHTML = '<div class="lyric-wrap"></div>'
 }
@@ -320,6 +342,9 @@ const getLrc = (url) => {
                 .replace(/##/g, '#')
             state.lyric = parseLyric(text)
             appendLyric(state.lyric)
+            const lyrics = document.querySelectorAll('.lyric-wrap')
+            const classListMethod = state.isLightMode ? 'add' : 'remove'
+            toggleNameSongItemClass(lyrics, 'color-gray', classListMethod)
         })
         .catch((error) => {
             document.getElementsByClassName('lyric-wrap')[0].innerHTML = "<p class='empty-lyrics'> Bài hát hiện tại chưa có lời </p>"
@@ -337,6 +362,16 @@ const loadSong = (song) => {
     resetContainerLyric()
     getLrc(arraySongs[song].lrc)
     avatarItemAction.src = arraySongs[song].avatar
+
+    for (let i = 0; i < songList.length; i++) {
+        songList[i].classList.remove('active')
+        songList[i].classList.remove('active-light-mode')
+    }
+    if (!state.isLightMode) {
+        songList[state.songIndex].classList.add('active')
+    } else {
+        songList[state.songIndex].classList.add('active-light-mode')
+    }
 }
 
 const getSong = () => {
@@ -390,7 +425,8 @@ const updateLyrics = () => {
                 if (currentLine.length > 0) {
                     const anchor = currentLine.position().top
                     $('.current-line').attr('class', '')
-                    currentLine.attr('class', 'current-line')
+                    const additionalClass = state.isLightMode ? 'color-light' : ''
+                    currentLine.attr('class', `current-line ${additionalClass}`)
                     $('.lyric-wrap').css('top', `${-anchor}px`)
                 }
             }
@@ -398,49 +434,78 @@ const updateLyrics = () => {
     }
 }
 
+const toggleNameSongItemClass = (elements, className, condition) => {
+    elements.forEach((element) => {
+        if (condition) {
+            element.classList.add(className)
+        } else {
+            element.classList.remove(className)
+        }
+    })
+}
+
+const toggleClass = (element, classNames, condition) => {
+    console.log(element)
+    classNames.forEach((className) => {
+        element.classList[condition ? 'add' : 'remove'](className)
+    })
+}
+
 const toggleMode = () => {
-    // True is Light Mode - False is Dark Mode
+    state.isLightMode = !state.isLightMode
+    changeStyleProgressBar()
+    const btnPlay = document.querySelector('.btn-play')
+    const btnNext = document.querySelector('.btn-next')
+    const wrapPlayer = document.querySelector('.music-player-wrap')
+    const innerBtnNext = document.querySelector('.inner_btn_next')
+    const innerBtnPrev = document.querySelector('.inner_btn_prev')
+    const borderImg = document.querySelector('.img-action')
+    const borderWrapperImg = document.querySelector('.border-wrapper-img-action')
+    const nameCreator = document.querySelector('.vip-2')
+    const nameSongItem = document.querySelectorAll('.name-song-item')
+    const lyrics = document.querySelectorAll('.lyric-wrap')
+    const activeLyrics = document.querySelectorAll('.current-line')
+    const classListMethod = state.isLightMode ? 'add' : 'remove'
+    const musicList = document.querySelector('.music-list')
     const elements = [
         document.body,
-        document.querySelector('.music-player-wrap'),
         document.querySelector('.btn-list'),
-        document.querySelector('.btn-mode'),
-        document.querySelector('.btn-play'),
+        document.body,
+        document.querySelector('.btn-state'),
         document.querySelector('.btn-heart'),
         document.querySelector('.btn-close'),
-        document.querySelector('.name'),
-        document.querySelector('.music-list'),
-        document.querySelector('.vip-2'),
-        ...document.querySelectorAll('.name-song-item'),
     ]
 
-    const classListMethod = state.isLightMode ? 'add' : 'remove'
+    const additionalClassNames = [
+        'vip-2-light',
+        'btn-next-light',
+        'light-music-wrap',
+        'inner_btn_next_light',
+        'inner_btn_prev_light',
+        'border-img-action-light',
+        'border-wrapper-img-action-light',
+        'btn-play-light',
+    ]
 
-    elements.forEach((element) => {
-        element.classList[classListMethod]('light-theme')
-        element.classList[classListMethod]('light-music-wrap')
-        element.classList[classListMethod]('light-btn-wrap')
-        element.classList[classListMethod]('light-btn-play-wrap')
-        element.classList[classListMethod]('light-text-color')
-    })
+    btnPlay.classList[classListMethod]('light-btn-play-wrap')
+    btnPlay.classList[classListMethod]('btn-play-light')
+    musicList.classList[classListMethod]('light-theme')
+    nameCreator.classList[classListMethod]('vip-2-light')
 
-    // Special case for '::before' pseudo-element
-    if (state.isLightMode) {
-        document.querySelector('.music-player-wrap').classList.add('light-music-wrap::before')
-        activeElement.classList.add('active-light-mode')
-        activeLightModeElement.classList.remove('active')
-        btnMode.classList.remove('fa-moon')
-        btnMode.classList.add('fa-sun')
-    } else {
-        document.querySelector('.music-player-wrap').classList.remove('light-music-wrap::before')
-        activeElement.classList.remove('active-light-mode')
-        activeLightModeElement.classList.add('active')
-        btnMode.classList.add('fa-moon')
-        btnMode.classList.remove('fa-sun')
-    }
+    const lightModeClassNames = ['light-music-wrap', 'light-btn-wrap', 'light-text-color']
+    elements.forEach((element) => toggleClass(element, lightModeClassNames, state.isLightMode))
 
-    state.isLightMode = !state.isLightMode
-    playSong()
+    toggleNameSongItemClass(lyrics, 'color-gray', classListMethod)
+    toggleNameSongItemClass(nameSongItem, 'name-song-item-light', classListMethod)
+    toggleNameSongItemClass(lyrics, 'color-gray', classListMethod)
+    toggleNameSongItemClass(activeLyrics, 'color-light', classListMethod)
+
+    toggleClass(btnNext, additionalClassNames, state.isLightMode)
+    toggleClass(wrapPlayer, additionalClassNames, state.isLightMode)
+    toggleClass(innerBtnNext, additionalClassNames, state.isLightMode)
+    toggleClass(innerBtnPrev, additionalClassNames, state.isLightMode)
+    toggleClass(borderImg, additionalClassNames, state.isLightMode)
+    toggleClass(borderWrapperImg, additionalClassNames, state.isLightMode)
 }
 
 const formatTime = (second) => {

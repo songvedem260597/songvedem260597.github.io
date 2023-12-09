@@ -5,9 +5,6 @@
         width: 360px;
     }
 
-    .music-player-wrap::before {
-        box-shadow: none;
-    }
 
     .music-play .music-controll {
         cursor: pointer;
@@ -21,9 +18,7 @@
 /*-LG-*/
 
 @media only screen and (max-width: 991px) and (min-width: 850px) {
-    .container {
-        width: 50vw;
-    }
+
 
     .wrap-time {
         margin-bottom: 20px;
@@ -51,9 +46,6 @@
 /*-MD-*/
 
 @media only screen and (max-width: 849px) and (min-width: 768px) {
-    .container {
-        width: 50vw;
-    }
 
     .music-player-wrap {
         width: 360px;
@@ -107,9 +99,6 @@
 /*-SM-*/
 
 @media only screen and (max-width: 767px) and (min-width: 576px) {
-    .container {
-        width: 50vw;
-    }
 
     .music-player-wrap {
         width: 360px;
@@ -122,7 +111,7 @@
     }
 
     .title-playing p {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     .wrap-now-playing {
@@ -184,9 +173,7 @@
 /*-XSM-*/
 
 @media only screen and (max-width:575px) and (min-width: 401px) {
-    .container {
-        width: 70vw;
-    }
+
 
     .music-player-wrap {
         width: 360px;
@@ -199,7 +186,7 @@
     }
 
     .title-playing p {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     .wrap-now-playing {
@@ -263,7 +250,7 @@
     }
 
     .music-play .info .name {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
 
     .music-play .music-controll .btn-play {
@@ -307,7 +294,7 @@
     }
 
     .title-playing p {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     .wrap-now-playing {

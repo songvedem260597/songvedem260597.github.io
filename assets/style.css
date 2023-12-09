@@ -777,7 +777,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 .song-item-info .name-song-item {
-	font-weight: 400;
+	font-weight: 300;
 }
 
 .song-item-info .creator {

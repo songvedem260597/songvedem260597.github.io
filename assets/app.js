@@ -236,11 +236,11 @@ const setupEventListeners = () => {
   });
 
   btnRandom.addEventListener("click", () => {
-    if (isRandom == false) {
-      isRandom = true;
+    if (state.isRandom == false) {
+      state.isRandom = true;
       addRandomSong();
-    } else if (isRandom == true) {
-      isRandom = false;
+    } else if (state.isRandom == true) {
+      state.isRandom = false;
       removeRandomSong();
     }
   });

@@ -151,6 +151,7 @@ const setupEventListeners = () => {
     );
   });
   progressBar.onchange = function (e) {
+    state.isDragging = false;
     const seekTime = (audio.duration / 100) * e.target.value;
     audio.currentTime = seekTime;
     var val = e.target.value;

@@ -71,8 +71,7 @@
 
     .music-play .music-controll :nth-child(1) {
         font-size: 0.9rem;
-        height: 20px;
-        width: 20px;
+
     }
 
     .music-play .music-controll :nth-child(5) {
@@ -142,8 +141,6 @@
 
     .music-play .music-controll :nth-child(1) {
         font-size: 0.9rem;
-        height: 20px;
-        width: 20px;
     }
 
     .music-play .music-controll :nth-child(5) {
@@ -231,8 +228,7 @@
 
     .music-play .music-controll :nth-child(1) {
         font-size: 0.9rem;
-        height: 20px;
-        width: 20px;
+
     }
 
     .music-play .music-controll :nth-child(2) {
@@ -340,8 +336,7 @@
 
     .music-play .music-controll :nth-child(1) {
         font-size: 0.9rem;
-        height: 20px;
-        width: 20px;
+
     }
 
     .music-play .music-controll :nth-child(5) {
@@ -374,6 +369,7 @@
 
     .copyright-vip-coder {
         font-size: 0.8rem;
+        justify-content: space-around;
     }
 
     input[type=range]::-webkit-slider-thumb {

@@ -309,6 +309,7 @@ a {
 	color: var(--gray);
 	display: flex;
 	align-items: center;
+	font-weight: 300;
 }
 
 .btn-state, .btn-list, .btn-heart, .btn-close {

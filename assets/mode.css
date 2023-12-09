@@ -1,0 +1,193 @@
+.wrapper-toggle-mode {
+    width: 20%;
+}
+
+#checkbox {
+    display: none;
+}
+
+.toggle {
+    height: 30px;
+    width: 50px;
+    border-radius: 40px;
+    background: linear-gradient(to bottom, #28D7CF, #8CECD8 40%);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+    box-sizing: content-box;
+    border: 1px solid;
+    border-color: #2e2e2e;
+}
+
+.mountains {
+    height: 110%;
+    width: 105%;
+    position: absolute;
+    z-index: 3;
+    background-color: #1C84A6;
+    transition: all 0.5s ease-in-out;
+    clip-path: polygon(0% 80%,
+            25% 50%,
+            40% 70%,
+            60% 35%,
+            65% 45%,
+            80% 20%,
+            100% 80%,
+            100% 100%,
+            0% 100%);
+}
+
+.sea {
+    height: 75px;
+    width: 300%;
+    border-radius: 50%;
+    position: absolute;
+    right: 50%;
+    bottom: -500%;
+    transform: translateX(50%);
+    transition: all 0.5s ease-in-out;
+    background: linear-gradient(to bottom,
+            #3f75cc,
+            #06063b,
+            #06063b,
+            #06063b,
+            #06063b);
+}
+
+.sea::before {
+    content: "";
+    height: 10px;
+    width: 7px;
+    background-color: rgba(254, 254, 254, 0.34);
+    filter: blur(5px);
+    position: absolute;
+    top: 7%;
+    left: 43%;
+}
+
+.star {
+    height: 1px;
+    width: 1px;
+    position: absolute;
+    top: -25%;
+    right: 0%;
+    background-color: #fff;
+    transition: all 0.5s ease-in-out;
+    filter: blur(0.4px);
+    border-radius: 50%;
+    -webkit-filter: blur(0.4px);
+}
+
+.star::before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: -25%;
+    right: 20px;
+    background-color: #fff;
+    transition: all 0.5s ease-in-out;
+    border-radius: 50%;
+}
+
+.star::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 5px;
+    right: 25px;
+    background-color: #fff;
+    transition: all 0.5s ease-in-out;
+    border-radius: 50%;
+}
+
+.cloud {
+    height: 4px;
+    width: 14px;
+    border-radius: 9999px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    filter: opacity(0.5);
+}
+
+.cloud::before {
+    content: "";
+    height: 5px;
+    width: 8px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: -50%;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+#checkbox:checked+.toggle {
+    background: linear-gradient(to bottom, #036daf, #003d63);
+}
+
+.toggle::before {
+    content: "";
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 10%;
+    right: 20%;
+    border-radius: 50%;
+    background-color: #fbff0e;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 0 15px #dcff15c5;
+}
+
+.toggle::after {
+    content: "";
+    height: 12px;
+    width: 12px;
+    position: absolute;
+    top: 10%;
+    left: -70%;
+    border-radius: 50%;
+    background-color: #ffffff;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 0 10px #ffffff88;
+}
+
+#checkbox:checked+.toggle {}
+
+#checkbox:checked+.toggle::before {
+    transform: translateX(180%);
+    -webkit-transform: translateX(180%);
+    -moz-transform: translateX(180%);
+    -ms-transform: translateX(180%);
+    -o-transform: translateX(180%);
+}
+
+#checkbox:checked+.toggle::after {
+    transform: translateX(580%);
+    -webkit-transform: translateX(580%);
+    -moz-transform: translateX(580%);
+    -ms-transform: translateX(580%);
+    -o-transform: translateX(580%);
+}
+
+#checkbox:checked+.toggle .mountains {
+    background-color: #05021a;
+    transform: translateY(100%);
+}
+
+#checkbox:checked+.toggle .sea {
+    background-color: #05021a;
+    bottom: -210%;
+}
+
+#checkbox:checked+.toggle .star {
+    transform: rotate(10deg);
+    top: 20%;
+}

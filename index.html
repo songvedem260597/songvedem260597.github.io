@@ -8,9 +8,16 @@
 	<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600&display=swap"
 		rel="stylesheet" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@700&family=Poppins:wght@300;400;500;600;700&family=Roboto&display=swap"
+		rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="assets/style.css">
 	<link rel="stylesheet" type="text/css" href="assets/grid.css">
 	<link rel="stylesheet" type="text/css" href="assets/reponsive.css">
+	<link rel="stylesheet" type="text/css" href="assets/mode.css">
+
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 </head>
 
@@ -22,9 +29,12 @@
 			<hr />
 			<hr />
 		</div>
+
+
 	</div>
 	<div id="app" class="container">
-		<div class="row wrapper-fixed">
+
+		<div class="row">
 			<div class="music-player-wrap col-4 col-lg-9 col-md-11 col-xsm-12 ">
 				<div class="music-play">
 					<div class="wrap-now-playing ">
@@ -32,7 +42,7 @@
 							<div class="btn-state now-playing-title-icon btn"><i class="fas fa-microphone"></i>
 							</div>
 							<div class="title-playing col-6 col-lg-6 col-md-6 col-sm-6 col-xsm-8 ">
-								<p>Now Playing</p>
+								<p>Playing Now</p>
 							</div>
 							<div class="btn-list now-playing-title-icon btn "><i class="fas fa-bars "></i>
 							</div>
@@ -50,9 +60,10 @@
 						</div>
 					</div>
 					<div class="wrapper-avatar-song container-avatar-wrapper">
-						<div class="avatar col-12 col-lg-12 col-md-12 col-sm-12 col-xsm-12">
-							<div class="img-shadow img-action-index"></div>
-							<img onerror="this.src='/img/singer_default.jpg'" src="">
+						<div class="avatar flex-center col-12 col-lg-12 col-md-12 col-sm-12 col-xsm-12">
+							<div class="flex-center border-wrapper-img-action">
+								<img onerror="this.src='/img/singer_default.jpg'" src="">
+							</div>
 						</div>
 						<div class="info col-12 col-lg-12 col-md-12 col-sm-12 col-xsm-12 col-xxm-12">
 							<div class="name "></div>
@@ -93,17 +104,32 @@
 					<ul class="list-music">
 					</ul>
 				</div>
-				<div class="copyright-vip-coder col-12 col-lg-12 col-md-12 col-sm-12 col-xsm-12 col-xxm-12">
-					<span class="vip-0"><i class="far fa-copyright"></i></span>
-					<span class="vip-1">Copyright by </span>
-					<a target="_blank" href="https://www.facebook.com/iamrockleee">
-						<span class="vip-2">songvedem</span>
-					</a>
-				</div>
 			</div>
 		</div>
+		<div class="row pd-t-40">
+			<div class="wrapper-toggle-mode ">
+				<label for="checkbox">
+					<input type="checkbox" name="" id="checkbox">
+					<div class="toggle">
+						<div class="cloud"></div>
+						<div class="star"></div>
+						<div class="sea"></div>
+						<div class="mountains"></div>
+					</div>
+				</label>
+			</div>
+			<div class="copyright-vip-coder flex-center col-12 col-lg-12 col-md-12 col-sm-12 col-xsm-12 col-xxm-12">
+				<span class="vip-0"><i class="far fa-copyright"></i></span>
+				<span class="vip-1">&nbsp;Copyright by </span>
+				<a target="_blank" href="https://www.facebook.com/iamrockleee">
+					<span class="vip-2"> &nbsp;songvedem</span>
+				</a>
+			</div>
 
+		</div>
 	</div>
+
+
 	<script type="text/javascript" src="assets/app.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
 		integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="

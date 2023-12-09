@@ -198,7 +198,7 @@ const setupEventListeners = () => {
             containerLyrics.style.visibility = 'visible'
             btnState.innerHTML = "<i class='fas fa-music'></i>"
             const iconMusic = document.querySelector('.fa-music')
-            iconMusic.style.paddingRight = '5px'
+            iconMusic.style.paddingRight = '3px'
         } else {
             state.isPlayLyrics = false
             containerAvatar.style.visibility = 'visible'
@@ -445,7 +445,6 @@ const toggleNameSongItemClass = (elements, className, condition) => {
 }
 
 const toggleClass = (element, classNames, condition) => {
-    console.log(element)
     classNames.forEach((className) => {
         element.classList[condition ? 'add' : 'remove'](className)
     })
@@ -457,6 +456,7 @@ const toggleMode = () => {
     const btnPlay = document.querySelector('.btn-play')
     const btnNext = document.querySelector('.btn-next')
     const wrapPlayer = document.querySelector('.music-player-wrap')
+    const container = document.querySelector('.container')
     const innerBtnNext = document.querySelector('.inner_btn_next')
     const innerBtnPrev = document.querySelector('.inner_btn_prev')
     const borderImg = document.querySelector('.img-action')
@@ -467,14 +467,9 @@ const toggleMode = () => {
     const activeLyrics = document.querySelectorAll('.current-line')
     const classListMethod = state.isLightMode ? 'add' : 'remove'
     const musicList = document.querySelector('.music-list')
-    const elements = [
-        document.body,
-        document.querySelector('.btn-list'),
-        document.body,
-        document.querySelector('.btn-state'),
-        document.querySelector('.btn-heart'),
-        document.querySelector('.btn-close'),
-    ]
+    const borderImgItem = document.querySelector('.img-action-small')
+
+    const elements = [document.body, document.querySelector('.btn-list'), document.querySelector('.btn-state'), document.querySelector('.btn-heart'), document.querySelector('.btn-close')]
 
     const additionalClassNames = [
         'vip-2-light',
@@ -491,15 +486,15 @@ const toggleMode = () => {
     btnPlay.classList[classListMethod]('btn-play-light')
     musicList.classList[classListMethod]('light-theme')
     nameCreator.classList[classListMethod]('vip-2-light')
+    borderImgItem.classList[classListMethod]('border-light')
+    container.classList[classListMethod]('bg-gray')
 
     const lightModeClassNames = ['light-music-wrap', 'light-btn-wrap', 'light-text-color']
     elements.forEach((element) => toggleClass(element, lightModeClassNames, state.isLightMode))
-
     toggleNameSongItemClass(lyrics, 'color-gray', classListMethod)
     toggleNameSongItemClass(nameSongItem, 'name-song-item-light', classListMethod)
     toggleNameSongItemClass(lyrics, 'color-gray', classListMethod)
     toggleNameSongItemClass(activeLyrics, 'color-light', classListMethod)
-
     toggleClass(btnNext, additionalClassNames, state.isLightMode)
     toggleClass(wrapPlayer, additionalClassNames, state.isLightMode)
     toggleClass(innerBtnNext, additionalClassNames, state.isLightMode)

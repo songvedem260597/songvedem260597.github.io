@@ -77,6 +77,10 @@ a {
 	color: #808080 !important;
 }
 
+.bg-gray {
+	background: #f2f2f2 !important;
+}
+
 .color-light {
 	color: var(--text-light) !important;
 }
@@ -405,7 +409,7 @@ a {
 }
 
 .border-wrapper-img-action {
-	border: 2px solid rgb(0 0 0);
+	border: 2px solid rgb(32 32 32);
 	border-radius: 50%;
 	-webkit-border-radius: 50%;
 	-moz-border-radius: 50%;
@@ -439,7 +443,7 @@ a {
 	animation-play-state: paused;
 	width: 220px;
 	height: 220px;
-	border: 12px solid #000000;
+	border: 12px solid rgb(25 25 25);
 	z-index: 5;
 	background-size: cover;
 	object-fit: cover;
@@ -927,4 +931,8 @@ input[type=range]::-moz-range-thumb {
 	height: 120px !important;
 	width: 120px !important;
 	box-shadow: rgb(0 0 0 / 20%) 2px 2px 5px 0px, rgb(150 150 165 / 20%) -5px -5px 10px 0px, rgb(0 0 0 / 40%) 10px 10px 15px 0px !important;
+}
+
+.border-light {
+	border-color: #6c815f !important;
 }

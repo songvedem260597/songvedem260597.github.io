@@ -63,6 +63,13 @@ let arraySongs = [
         lrc: '../assets/lrc/gods.lrc',
     },
     {
+        name: 'Bạc Phận',
+        singer: 'K-ICM x JACK ( Masew Remix )',
+        path: '../assets/mp3/bac_phan_remix.mp3',
+        avatar: '../assets/avatar/bac_phan.jpg',
+        lrc: '../assets/lrc/bac_phan_remix.lrc',
+    },
+    {
         name: 'Hoa Hải Đường',
         singer: 'Jack',
         path: '../assets/mp3/hoa_hai_duong.mp3',

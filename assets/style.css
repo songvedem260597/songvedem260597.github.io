@@ -642,14 +642,14 @@ input[type=range]::-webkit-slider-thumb {
 	-webkit-appearance: none;
 	box-shadow: 0px 0px 10px #000000;
 	border: 6px solid #24282C;
-	height: 20px !important;
-	width: 20px !important;
+	height: 22px !important;
+	width: 22px !important;
 	border-radius: 50px;
 	background: rgba(184, 160, 34, 1);
 	cursor: pointer;
 	-webkit-appearance: none;
 	margin-top: -9px !important;
-	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2), -2px -2px 2px 0px rgba(150, 150, 165, 0.1), 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2), -2px -2px 4px 0px rgba(150, 150, 165, 0.1), 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
 input[type=range]::-moz-range-track {
@@ -666,14 +666,14 @@ input[type=range]::-moz-range-track {
 input[type=range]::-moz-range-thumb {
 	box-shadow: 0px 0px 10px #000000;
 	border: 6px solid #24282C;
-	height: 20px;
-	width: 20px;
+	height: 22px;
+	width: 22px;
 	border-radius: 50px;
 	background: rgba(184, 160, 34, 1);
 	cursor: pointer;
 	-webkit-appearance: none;
 	margin-top: -8px;
-	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2), -2px -2px 2px 0px rgba(150, 150, 165, 0.1), 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2), -2px -2px 4px 0px rgba(150, 150, 165, 0.1), 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
 /*--Light theme--*/
@@ -818,8 +818,6 @@ input[type=range]::-moz-range-thumb {
 
 .name-song-action {
 	width: 200px;
-	background-size: red;
-
 }
 
 .avatar-action img {

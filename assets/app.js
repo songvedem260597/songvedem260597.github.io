@@ -35,6 +35,7 @@ const state = {
   isPlayLyrics: false,
   isLoop: false,
   isHeart: false,
+  isDragging: false,
 };
 
 let arraySongs = [
@@ -122,7 +123,7 @@ const setupEventListeners = () => {
     timeSong.textContent = time;
   });
   audio.ontimeupdate = function () {
-    if (audio.duration) {
+    if (audio.duration && state.isDragging == false) {
       const progressPercent = (audio.currentTime / audio.duration) * 100;
       progressBar.value = progressPercent;
       var val = progressPercent;
@@ -136,6 +137,19 @@ const setupEventListeners = () => {
       );
     }
   };
+
+  progressBar.addEventListener("input", function (e) {
+    state.isDragging = true;
+    var val = e.target.value;
+    if (val >= 90 && val <= 99) val = val - 1;
+    create_style(
+      "input[type=range]::-webkit-slider-runnable-track { background: linear-gradient(90deg, rgba(218,80,25,1) 0%, rgba(184,160,34,1) " +
+        val +
+        "%, #1D2021 " +
+        val +
+        "%, #1D2021 100%) !important;}"
+    );
+  });
   progressBar.onchange = function (e) {
     const seekTime = (audio.duration / 100) * e.target.value;
     audio.currentTime = seekTime;

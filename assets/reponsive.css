@@ -6,7 +6,7 @@
     }
 
 
-    .music-play .music-controll {
+    .music-play .music-control {
         cursor: pointer;
     }
 
@@ -33,7 +33,7 @@
         font-size: 1.4rem;
     }
 
-    .music-play .music-controll .btn-play i {
+    .music-play .music-control .btn-play i {
         font-size: 1.2rem;
     }
 
@@ -69,27 +69,27 @@
         height: 150px;
     }
 
-    .music-play .music-controll :nth-child(1) {
-        font-size: 0.9rem;
+    .music-play .music-control :nth-child(1) {
+        font-size: var(--icon--md-767);
 
     }
 
-    .music-play .music-controll :nth-child(5) {
+    .music-play .music-control :nth-child(5) {
         height: 20px;
         width: 20px;
-        font-size: 0.9rem;
+        font-size: var(--icon--md-767);
     }
 
     .music-play .info .name {
         font-size: 1.4rem;
     }
 
-    .music-play .music-controll .btn-play {
+    .music-play .music-control .btn-play {
         height: 50px;
         width: 50px;
     }
 
-    .music-play .music-controll .btn-play i {
+    .music-play .music-control .btn-play i {
         font-size: 1.2rem;
         top: 0;
     }
@@ -131,34 +131,34 @@
         height: 140px;
     }
 
-    .music-play .music-controll {
+    .music-play .music-control {
         height: 130px;
     }
 
-    .music-play .music-controll {
+    .music-play .music-control {
         width: 100%;
     }
 
-    .music-play .music-controll :nth-child(1) {
-        font-size: 0.9rem;
+    .music-play .music-control :nth-child(1) {
+        font-size: var(--icon--md-767);
     }
 
-    .music-play .music-controll :nth-child(5) {
+    .music-play .music-control :nth-child(5) {
         height: 20px;
         width: 20px;
-        font-size: 0.9rem;
+        font-size: var(--icon--md-767);
     }
 
     .music-play .info .name {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
-    .music-play .music-controll .btn-play {
+    .music-play .music-control .btn-play {
         height: 50px;
         width: 50px;
     }
 
-    .music-play .music-controll .btn-play i {
+    .music-play .music-control .btn-play i {
         font-size: 1.1rem;
     }
 
@@ -208,7 +208,7 @@
         height: 140px;
     }
 
-    .music-play .music-controll {
+    .music-play .music-control {
         height: 130px;
     }
 
@@ -222,39 +222,39 @@
         width: 23px;
     }
 
-    .music-play .music-controll {
+    .music-play .music-control {
         width: 100%;
     }
 
-    .music-play .music-controll :nth-child(1) {
-        font-size: 0.9rem;
+    .music-play .music-control :nth-child(1) {
+        font-size: var(--icon--sm-575);
 
     }
 
-    .music-play .music-controll :nth-child(2) {
-        font-size: 1.3rem;
+    .music-play .music-control :nth-child(2) {
+        font-size: var(--icon--sm-575);
     }
 
-    .music-play .music-controll :nth-child(4) {
-        font-size: 1.3rem;
+    .music-play .music-control :nth-child(4) {
+        font-size: var(--icon--sm-575);
     }
 
-    .music-play .music-controll :nth-child(5) {
+    .music-play .music-control :nth-child(5) {
         height: 20px;
         width: 20px;
-        font-size: 0.9rem;
+        font-size: var(--icon--sm-575);
     }
 
     .music-play .info .name {
         font-size: 1.4rem;
     }
 
-    .music-play .music-controll .btn-play {
+    .music-play .music-control .btn-play {
         height: 45px;
         width: 45px;
     }
 
-    .music-play .music-controll .btn-play i {
+    .music-play .music-control .btn-play i {
         font-size: 1rem;
         margin-top: 1px;
     }
@@ -316,7 +316,7 @@
         height: 140px;
     }
 
-    .music-play .music-controll {
+    .music-play .music-control {
         height: 110px;
     }
 
@@ -330,39 +330,39 @@
         width: 23px;
     }
 
-    .music-play .music-controll {
+    .music-play .music-control {
         width: 100%;
     }
 
-    .music-play .music-controll :nth-child(1) {
-        font-size: 0.9rem;
+    .music-play .music-control :nth-child(1) {
+        font-size: var(--icon--sm-400);
 
     }
 
-    .music-play .music-controll :nth-child(5) {
+    .music-play .music-control :nth-child(5) {
         height: 20px;
         width: 20px;
-        font-size: 0.9rem;
+        font-size: var(--icon--sm-400);
     }
 
-    .music-play .music-controll :nth-child(2) {
-        font-size: 1.2rem;
+    .music-play .music-control :nth-child(2) {
+        font-size: var(--icon--sm-400);
     }
 
-    .music-play .music-controll :nth-child(4) {
-        font-size: 1.2rem;
+    .music-play .music-control :nth-child(4) {
+        font-size: var(--icon--sm-400);
     }
 
     .music-play .info .name {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
-    .music-play .music-controll .btn-play {
+    .music-play .music-control .btn-play {
         height: 40px;
         width: 40px;
     }
 
-    .music-play .music-controll .btn-play i {
+    .music-play .music-control .btn-play i {
         font-size: 0.9rem;
         top: 0;
     }

@@ -80,6 +80,7 @@ let arraySongs = [
         singer: 'Imagine Dragons & JID',
         path: '../assets/mp3/enemy.mp3',
         avatar: '../assets/avatar/enemy.jpg',
+        lrc: '',
     },
 
     {
@@ -87,30 +88,35 @@ let arraySongs = [
         singer: 'Nguyễn Kiều Anh (Feliks Alvin Remix)',
         path: '../assets/mp3/doc_am.mp3',
         avatar: '../assets/avatar/doc_am.jpg',
+        lrc: '',
     },
     {
         name: 'THIS WAY',
         singer: ' CARA x NOWAY x KHẮC HƯNG',
         path: '../assets/mp3/this_way.mp3',
         avatar: '../assets/avatar/this_way.jpg',
+        lrc: '',
     },
     {
         name: 'Hoàn Hảo',
         singer: 'Bray',
         path: '../assets/mp3/hoan_hao.mp3',
         avatar: '../assets/avatar/hoan_hao.jpg',
+        lrc: '',
     },
     {
         name: 'Người Em Cố Đô',
         singer: 'Rum x Đaa x Toann',
         path: '../assets/mp3/em_co_do.mp3',
         avatar: '../assets/avatar/em_co_do.jpg',
+        lrc: '',
     },
     {
         name: 'Đưa em về nhàa',
         singer: 'GREY D x CHILLIES',
         path: '../assets/mp3/dua_em_ve_nha.mp3',
         avatar: '../assets/avatar/dua_em_ve_nha.jpg',
+        lrc: '',
     },
 ]
 
@@ -332,30 +338,34 @@ const handleClickLyric = (timestamp) => {
 }
 
 const getLrc = (url) => {
-    fetch(url)
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok')
-            }
-            return response.text()
-        })
-        .then((data) => {
-            let text = data
-                .replace(/\n/g, '#')
-                .replace(/\r/g, '')
-                .replace(/######/g, '#')
-                .replace(/####/g, '#')
-                .replace(/###/g, '#')
-                .replace(/##/g, '#')
-            state.lyric = parseLyric(text)
-            appendLyric(state.lyric)
-            const lyrics = document.querySelectorAll('.lyric-wrap')
-            const classListMethod = state.isLightMode ? 'add' : 'remove'
-            toggleNameSongItemClass(lyrics, 'color-gray', classListMethod)
-        })
-        .catch((error) => {
-            document.getElementsByClassName('lyric-wrap')[0].innerHTML = "<p class='empty-lyrics'> Bài hát hiện tại chưa có lời </p>"
-        })
+    if (!url) {
+        document.getElementsByClassName('lyric-wrap')[0].innerHTML = "<p class='empty-lyrics'> Bài hát hiện tại chưa có lời </p>"
+    } else {
+        fetch(url)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok')
+                }
+                return response.text()
+            })
+            .then((data) => {
+                let text = data
+                    .replace(/\n/g, '#')
+                    .replace(/\r/g, '')
+                    .replace(/######/g, '#')
+                    .replace(/####/g, '#')
+                    .replace(/###/g, '#')
+                    .replace(/##/g, '#')
+                state.lyric = parseLyric(text)
+                appendLyric(state.lyric)
+                const lyrics = document.querySelectorAll('.lyric-wrap')
+                const classListMethod = state.isLightMode ? 'add' : 'remove'
+                toggleNameSongItemClass(lyrics, 'color-gray', classListMethod)
+            })
+            .catch((error) => {
+                document.getElementsByClassName('lyric-wrap')[0].innerHTML = "<p class='empty-lyrics'> Bài hát hiện tại chưa có lời </p>"
+            })
+    }
 }
 
 const loadSong = (song) => {
@@ -475,9 +485,8 @@ const toggleMode = () => {
     const classListMethod = state.isLightMode ? 'add' : 'remove'
     const musicList = document.querySelector('.music-list')
     const borderImgItem = document.querySelector('.img-action-small')
-
     const elements = [document.body, document.querySelector('.btn-list'), document.querySelector('.btn-state'), document.querySelector('.btn-heart'), document.querySelector('.btn-close')]
-
+    const lightModeClassNames = ['light-music-wrap', 'light-btn-wrap', 'light-text-color']
     const additionalClassNames = [
         'vip-2-light',
         'btn-next-light',
@@ -496,7 +505,6 @@ const toggleMode = () => {
     borderImgItem.classList[classListMethod]('border-light')
     container.classList[classListMethod]('bg-gray')
 
-    const lightModeClassNames = ['light-music-wrap', 'light-btn-wrap', 'light-text-color']
     elements.forEach((element) => toggleClass(element, lightModeClassNames, state.isLightMode))
     toggleNameSongItemClass(lyrics, 'color-gray', classListMethod)
     toggleNameSongItemClass(nameSongItem, 'name-song-item-light', classListMethod)

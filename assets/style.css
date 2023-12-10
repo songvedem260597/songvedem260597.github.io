@@ -17,6 +17,11 @@
 	--light-color: 255, 255, 255;
 	--orange: #ff6600;
 	--text-light: #42b300;
+	--icon--sm-400: 1.1rem;
+	--icon--sm-575: 1.1rem;
+	--icon--md-767: 1.1rem;
+
+
 }
 
 * {
@@ -530,7 +535,7 @@ a {
 
 /*-Music-Control-*/
 
-.music-play .music-controll {
+.music-play .music-control {
 	font-size: 2em;
 	display: flex;
 	justify-content: space-between;
@@ -544,7 +549,7 @@ a {
 
 /*Loop*/
 
-.music-play .music-controll .btn-loop {
+.music-play .music-control .btn-loop {
 	font-size: 1.5rem;
 	padding: 5px;
 	border-radius: 50%;
@@ -552,7 +557,7 @@ a {
 
 /*Random*/
 
-.music-play .music-controll .btn-random {
+.music-play .music-control .btn-random {
 	font-size: 1.5rem;
 	padding: 5px;
 	border-radius: 50%;
@@ -560,21 +565,21 @@ a {
 
 /*Prev*/
 
-.music-play .music-controll :nth-child(2) {
+.music-play .music-control :nth-child(2) {
 	font-size: 1rem;
 	color: var(--gray-color);
 }
 
 /*Next*/
 
-.music-play .music-controll :nth-child(4) {
+.music-play .music-control :nth-child(4) {
 	font-size: 1rem;
 	color: var(--gray-color);
 }
 
 /*--Play--*/
 
-.music-play .music-controll .btn-play {
+.music-play .music-control .btn-play {
 	height: 50px;
 	width: 50px;
 	color: rgb(255, 255, 255);
@@ -592,7 +597,7 @@ a {
 
 }
 
-.music-play .music-controll .btn-play:before {
+.music-play .music-control .btn-play:before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -606,7 +611,7 @@ a {
 	background: linear-gradient(315deg, rgba(196, 38, 17, 1) 0%, rgba(230, 85, 12, 1) 100%);
 }
 
-.music-play .music-controll .btn-play i {
+.music-play .music-control .btn-play i {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -644,7 +649,7 @@ a {
 	background: linear-gradient(315deg, rgba(29, 31, 35, 1) 0%, rgba(46, 53, 58, 1) 100%);
 	box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2), -4px -4px 15px 0px rgba(71, 71, 71, 0.3), 2px 2px 20px 0px rgba(46, 46, 46, 0.6);
 	border: 2px solid;
-	border-color: #222222;
+	border-color: #202020;
 }
 
 .inner_btn_prev.inner_btn_prev_light, .inner_btn_next.inner_btn_next_light {
@@ -652,8 +657,7 @@ a {
 	box-shadow: -3px -3px 9px 0.1px #fff, 3px 3px 9px 0.1px #ccc;
 	;
 	border: 2px solid transparent !important;
-
-
+	font-size: var(--icon--md-767);
 }
 
 

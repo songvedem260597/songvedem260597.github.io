@@ -511,6 +511,9 @@ const toggleMode = () => {
     changeStyleProgressBar()
     const btnPlay = document.querySelector('.btn-play')
     const btnNext = document.querySelector('.btn-next')
+    const btnLoop = document.querySelector('.btn-loop')
+    const btnRandom = document.querySelector('.btn-random')
+
     const wrapPlayer = document.querySelector('.music-player-wrap')
     const container = document.querySelector('.container')
     const innerBtnNext = document.querySelector('.inner_btn_next')
@@ -524,6 +527,7 @@ const toggleMode = () => {
     const classListMethod = state.isLightMode ? 'add' : 'remove'
     const musicList = document.querySelector('.music-list')
     const borderImgItem = document.querySelector('.img-action-small')
+
     const elements = [document.body, document.querySelector('.btn-list'), document.querySelector('.btn-state'), document.querySelector('.btn-heart'), document.querySelector('.btn-close')]
     const lightModeClassNames = ['light-music-wrap', 'light-btn-wrap', 'light-text-color']
     const additionalClassNames = [
@@ -539,6 +543,16 @@ const toggleMode = () => {
 
     btnPlay.classList[classListMethod]('light-btn-play-wrap')
     btnPlay.classList[classListMethod]('btn-play-light')
+
+    if (state.isLoop) {
+        btnLoop.classList[classListMethod]('color-light')
+        btnLoop.classList.remove('bx-remove-loop')
+    }
+    if (state.isRandom) {
+        btnRandom.classList[classListMethod]('color-light')
+        btnRandom.classList.remove('bx-remove-random')
+    }
+
     musicList.classList[classListMethod]('light-theme')
     nameCreator.classList[classListMethod]('vip-2-light')
     borderImgItem.classList[classListMethod]('border-light')
@@ -572,16 +586,57 @@ const formatTime = (second) => {
 }
 
 const loopSong = () => {
-    btnLoop.classList.remove('bx-remove-loop')
-    btnLoop.classList.add('bx-add-loop')
+    if (state.isLightMode) {
+        btnLoop.classList.add('color-light')
+        btnLoop.classList.remove('bx-remove-loop')
+    } else {
+        btnLoop.classList.remove('bx-remove-loop')
+        btnLoop.classList.add('bx-add-loop')
+    }
+
     if (state.songIndex > arraySongs.length - 1) {
         state.songIndex = 0
     }
 }
 
 const removeLoopSong = () => {
-    btnLoop.classList.add('bx-remove-loop')
-    btnLoop.classList.remove('bx-add-loop')
+    if (state.isLightMode) {
+        btnLoop.classList.remove('color-light')
+        btnLoop.classList.add('bx-remove-loop')
+    } else {
+        btnLoop.classList.add('bx-remove-loop')
+        btnLoop.classList.remove('bx-add-loop')
+    }
+
+    if (state.songIndex > arraySongs.length - 1) {
+        state.songIndex = 0
+    }
+}
+
+const addRandomSong = () => {
+    state.songIndex = Math.floor(Math.random() * 101)
+
+    if (state.isLightMode) {
+        btnRandom.classList.remove('color-light')
+        btnRandom.classList.add('bx-remove-random')
+    } else {
+        btnRandom.classList.remove('bx-remove-random')
+        btnRandom.classList.add('bx-add-random')
+    }
+
+    if (state.songIndex > arraySongs.length - 1) {
+        state.songIndex = 0
+    }
+}
+
+const removeRandomSong = () => {
+    if (state.isLightMode) {
+        btnRandom.classList.add('color-light')
+        btnRandom.classList.remove('bx-remove-random')
+    } else {
+        btnRandom.classList.add('bx-remove-random')
+        btnRandom.classList.remove('bx-add-random')
+    }
     if (state.songIndex > arraySongs.length - 1) {
         state.songIndex = 0
     }
@@ -604,22 +659,6 @@ const pauseSong = () => {
     audio.pause()
 }
 
-const addRandomSong = () => {
-    state.songIndex = Math.floor(Math.random() * 101)
-    btnRandom.classList.remove('bx-remove-random')
-    btnRandom.classList.add('bx-add-random')
-    if (state.songIndex > arraySongs.length - 1) {
-        state.songIndex = 0
-    }
-}
-
-const removeRandomSong = () => {
-    btnRandom.classList.add('bx-remove-random')
-    btnRandom.classList.remove('bx-add-random')
-    if (state.songIndex > arraySongs.length - 1) {
-        state.songIndex = 0
-    }
-}
 const nextSong = () => {
     state.songIndex++
     if (state.songIndex > arraySongs.length - 1) {

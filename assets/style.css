@@ -17,9 +17,9 @@
 	--light-color: 255, 255, 255;
 	--orange: #ff6600;
 	--text-light: #42b300;
-	--icon--sm-400: 1.1rem;
-	--icon--sm-575: 1.1rem;
-	--icon--md-767: 1.1rem;
+	--icon--sm-400: 1.2rem;
+	--icon--sm-575: 1.2rem;
+	--icon--md-767: 1.2rem;
 
 
 }
@@ -304,7 +304,7 @@ a {
 }
 
 .bx-remove-random {
-	color: var(--dark--gray);
+	color: var(--dark--gray) !important;
 }
 
 .bx-add-loop {

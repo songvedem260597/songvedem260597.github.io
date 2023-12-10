@@ -79,7 +79,7 @@ a {
 }
 
 .color-gray {
-	color: #808080 !important;
+	color: var(--gray) !important;
 }
 
 .bg-gray {
@@ -109,7 +109,9 @@ a {
 	color: var(--orange) !important;
 }
 
-
+.empty-lyrics {
+	color: var(--gray);
+}
 
 /*--Preloader--*/
 
@@ -533,7 +535,7 @@ a {
 	top: -4.5px;
 }
 
-/*-Music-Control-*/
+/*--Music-Control--*/
 
 .music-play .music-control {
 	font-size: 2em;
@@ -550,7 +552,7 @@ a {
 /*Loop*/
 
 .music-play .music-control .btn-loop {
-	font-size: 1.5rem;
+	font-size: 1.4rem;
 	padding: 5px;
 	border-radius: 50%;
 }
@@ -558,7 +560,7 @@ a {
 /*Random*/
 
 .music-play .music-control .btn-random {
-	font-size: 1.5rem;
+	font-size: 1.4rem;
 	padding: 5px;
 	border-radius: 50%;
 }
@@ -647,9 +649,9 @@ a {
 	height: 38px;
 	width: 38px;
 	background: linear-gradient(315deg, rgba(29, 31, 35, 1) 0%, rgba(46, 53, 58, 1) 100%);
-	box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2), -4px -4px 15px 0px rgba(71, 71, 71, 0.3), 2px 2px 20px 0px rgba(46, 46, 46, 0.6);
-	border: 2px solid;
-	border-color: #202020;
+	box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2), -4px -4px 8px 0px rgba(71, 71, 71, 0.3), 2px 2px 10px 0px rgba(46, 46, 46, 0.6);
+	border: 1px solid;
+	border-color: #25282c;
 }
 
 .inner_btn_prev.inner_btn_prev_light, .inner_btn_next.inner_btn_next_light {
@@ -659,7 +661,6 @@ a {
 	border: 2px solid transparent !important;
 	font-size: var(--icon--md-767);
 }
-
 
 /*--Pre-loader--*/
 

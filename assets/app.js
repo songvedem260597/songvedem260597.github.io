@@ -63,6 +63,13 @@ let arraySongs = [
         lrc: '../assets/lrc/gods.lrc',
     },
     {
+        name: 'Abcdefu',
+        singer: 'GAYLE',
+        path: '../assets/mp3/abcdefu.mp3',
+        avatar: '../assets/avatar/abcdefu.jpg',
+        lrc: '../assets/lrc/abcdefu.lrc',
+    },
+    {
         name: 'Bạc Phận',
         singer: 'K-ICM x JACK ( Masew Remix )',
         path: '../assets/mp3/bac_phan_remix.mp3',
@@ -74,6 +81,7 @@ let arraySongs = [
         singer: 'Jack',
         path: '../assets/mp3/hoa_hai_duong.mp3',
         avatar: '../assets/avatar/hoa_hai_duong.png',
+        lrc: '../assets/lrc/hoa_hai_duong.lrc',
     },
     {
         name: 'Enemy',
@@ -271,6 +279,37 @@ const setupEventListeners = () => {
     })
 }
 
+const loadMediaSession = (name, singer, avatar) => {
+    if ('mediaSession' in navigator) {
+        navigator.mediaSession.metadata = new MediaMetadata({
+            title: name,
+            artist: singer,
+            artwork: [
+                { src: avatar, sizes: '96x96', type: 'image/png' },
+                { src: avatar, sizes: '128x128', type: 'image/png' },
+                { src: avatar, sizes: '192x192', type: 'image/png' },
+                { src: avatar, sizes: '256x256', type: 'image/png' },
+                { src: avatar, sizes: '384x384', type: 'image/png' },
+                { src: avatar, sizes: '512x512', type: 'image/png' },
+            ],
+        })
+        navigator.mediaSession.setActionHandler('previoustrack', function () {
+            prevSong()
+            playSong()
+        })
+        navigator.mediaSession.setActionHandler('nexttrack', function () {
+            nextSong()
+            playSong()
+        })
+        navigator.mediaSession.setActionHandler('pause', function () {
+            pauseSong()
+        })
+        navigator.mediaSession.setActionHandler('play', function () {
+            playSong()
+        })
+    }
+}
+
 const parseLyric = (text) => {
     const lines = text.split('#').filter((line) => /\[\d{2}:\d{2}.\d{2,3}\]/.test(line))
     const result = lines.map((line) => {
@@ -379,7 +418,7 @@ const loadSong = (song) => {
     resetContainerLyric()
     getLrc(arraySongs[song].lrc)
     avatarItemAction.src = arraySongs[song].avatar
-
+    loadMediaSession(arraySongs[song].name, arraySongs[song].singer, arraySongs[song].avatar)
     for (let i = 0; i < songList.length; i++) {
         songList[i].classList.remove('active')
         songList[i].classList.remove('active-light-mode')

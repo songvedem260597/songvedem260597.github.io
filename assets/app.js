@@ -71,10 +71,24 @@ let arraySongs = [
     },
     {
         name: 'Bạc Phận',
-        singer: 'K-ICM x JACK ( Masew Remix )',
+        singer: 'K-ICM x JACK (Masew Remix)',
         path: '../assets/mp3/bac_phan_remix.mp3',
         avatar: '../assets/avatar/bac_phan.jpg',
         lrc: '../assets/lrc/bac_phan_remix.lrc',
+    },
+    {
+        name: 'Độ Tộc 2 Remix',
+        singer: 'MASEW x PHÚC DU x PHÁO x ĐỘ MIX',
+        path: '../assets/mp3/do_toc_2_remix.mp3',
+        avatar: '../assets/avatar/do_toc_2.jpg',
+        lrc: '../assets/lrc/do_toc_2_remix.lrc',
+    },
+    {
+        name: 'Thắc Mắc',
+        singer: 'Thịnh Suy',
+        path: '../assets/mp3/thac_mac.mp3',
+        avatar: '../assets/avatar/thac_mac.jpg',
+        lrc: '../assets/lrc/thac_mac.lrc',
     },
     {
         name: 'Hoa Hải Đường',

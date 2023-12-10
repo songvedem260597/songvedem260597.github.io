@@ -530,16 +530,7 @@ const toggleMode = () => {
 
     const elements = [document.body, document.querySelector('.btn-list'), document.querySelector('.btn-state'), document.querySelector('.btn-heart'), document.querySelector('.btn-close')]
     const lightModeClassNames = ['light-music-wrap', 'light-btn-wrap', 'light-text-color']
-    const additionalClassNames = [
-        'vip-2-light',
-        'btn-next-light',
-        'light-music-wrap',
-        'inner_btn_next_light',
-        'inner_btn_prev_light',
-        'border-img-action-light',
-        'border-wrapper-img-action-light',
-        'btn-play-light',
-    ]
+    const additionalClassNames = ['vip-2-light', 'light-music-wrap', 'inner_btn_prev_light', 'border-img-action-light', 'border-wrapper-img-action-light', 'btn-play-light']
 
     btnPlay.classList[classListMethod]('light-btn-play-wrap')
     btnPlay.classList[classListMethod]('btn-play-light')
@@ -557,16 +548,15 @@ const toggleMode = () => {
     nameCreator.classList[classListMethod]('vip-2-light')
     borderImgItem.classList[classListMethod]('border-light')
     container.classList[classListMethod]('bg-gray')
+    innerBtnNext.classList[classListMethod]('inner_btn_next_light')
+    innerBtnPrev.classList[classListMethod]('inner_btn_prev_light')
 
     elements.forEach((element) => toggleClass(element, lightModeClassNames, state.isLightMode))
     toggleNameSongItemClass(lyrics, 'color-gray', classListMethod)
     toggleNameSongItemClass(nameSongItem, 'name-song-item-light', classListMethod)
     toggleNameSongItemClass(lyrics, 'color-gray', classListMethod)
     toggleNameSongItemClass(activeLyrics, 'color-light', classListMethod)
-    toggleClass(btnNext, additionalClassNames, state.isLightMode)
     toggleClass(wrapPlayer, additionalClassNames, state.isLightMode)
-    toggleClass(innerBtnNext, additionalClassNames, state.isLightMode)
-    toggleClass(innerBtnPrev, additionalClassNames, state.isLightMode)
     toggleClass(borderImg, additionalClassNames, state.isLightMode)
     toggleClass(borderWrapperImg, additionalClassNames, state.isLightMode)
 }

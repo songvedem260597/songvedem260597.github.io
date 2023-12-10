@@ -17,8 +17,8 @@
 	--light-color: 255, 255, 255;
 	--orange: #ff6600;
 	--text-light: #42b300;
-	--icon--sm-400: 1.2rem;
-	--icon--sm-575: 1.2rem;
+	--icon--sm-400: 1.1rem;
+	--icon--sm-575: 1.1rem;
 	--icon--md-767: 1.2rem;
 
 
@@ -631,6 +631,10 @@ a {
 .btn-play-light.btn-play:before {
 	background: #446d2c !important;
 	box-shadow: -1px -1px 2px 0.1px rgba(0, 0, 0, 0.2), 5px 5px 10px 0.1px rgba(0, 0, 0, 0.2);
+}
+
+.btn-next, .btn-prev {
+	padding: 30px;
 }
 
 .btn-next-light {

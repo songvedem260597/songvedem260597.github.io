@@ -550,12 +550,23 @@ const toggleMode = () => {
     btnPlay.classList[classListMethod]('btn-play-light')
 
     if (state.isLoop) {
-        btnLoop.classList[classListMethod]('color-light')
-        btnLoop.classList.remove('bx-remove-loop')
+        console.log(state.isLightMode)
+        if (state.isLightMode) {
+            btnLoop.classList.add('color-light')
+            btnLoop.classList.remove('bx-remove-loop')
+        } else {
+            btnLoop.classList.remove('color-light')
+            btnLoop.classList.add('bx-add-loop')
+        }
     }
     if (state.isRandom) {
-        btnRandom.classList[classListMethod]('color-light')
-        btnRandom.classList.remove('bx-remove-random')
+        if (state.isLightMode) {
+            btnRandom.classList.add('color-light')
+            btnRandom.classList.remove('bx-remove-random')
+        } else {
+            btnRandom.classList.remove('color-light')
+            btnRandom.classList.add('bx-add-random')
+        }
     }
 
     musicList.classList[classListMethod]('light-theme')

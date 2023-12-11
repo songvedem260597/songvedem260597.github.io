@@ -42,6 +42,13 @@ const state = {
 
 let arraySongs = [
     {
+        name: 'Bạc Phận',
+        singer: 'K-ICM x JACK (Masew Remix)',
+        path: '../assets/mp3/bac_phan_remix.mp3',
+        avatar: '../assets/avatar/bac_phan.jpg',
+        lrc: '../assets/lrc/bac_phan_remix.lrc',
+    },
+    {
         name: 'At My Worst',
         singer: 'Pink Sweat',
         path: '../assets/mp3/at_my_worst.mp3',
@@ -76,13 +83,7 @@ let arraySongs = [
         avatar: '../assets/avatar/lac_troi.jpg',
         lrc: '../assets/lrc/lac_troi.lrc',
     },
-    {
-        name: 'Bạc Phận',
-        singer: 'K-ICM x JACK (Masew Remix)',
-        path: '../assets/mp3/bac_phan_remix.mp3',
-        avatar: '../assets/avatar/bac_phan.jpg',
-        lrc: '../assets/lrc/bac_phan_remix.lrc',
-    },
+
     {
         name: 'Độ Tộc 2 Remix',
         singer: 'MASEW x PHÚC DU x PHÁO x ĐỘ MIX',

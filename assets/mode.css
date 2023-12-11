@@ -13,13 +13,11 @@
     background: linear-gradient(to bottom, #28D7CF, #8CECD8 40%);
     position: relative;
     overflow: hidden;
-    cursor: pointer;
     -webkit-border-radius: 40px;
     -moz-border-radius: 40px;
     -ms-border-radius: 40px;
     -o-border-radius: 40px;
     box-sizing: content-box;
-
 }
 
 .mountains {

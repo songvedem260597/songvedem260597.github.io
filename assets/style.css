@@ -633,8 +633,13 @@ a {
 	box-shadow: -1px -1px 2px 0.1px rgba(0, 0, 0, 0.2), 5px 5px 10px 0.1px rgba(0, 0, 0, 0.2);
 }
 
+.btn-state, .btn-list{
+	box-shadow: -8px -8px 20px 0px #fff9, -6px -6px 6px 0px #fff9, 8px 8px 20px #0001, 5px 5px 6px 0px #0001;
+}
+
 .btn-next, .btn-prev {
-	padding: 30px;
+	padding: 20px;
+	font-size: 1.1rem;
 }
 
 .btn-next-light {
@@ -652,10 +657,6 @@ a {
 	border-radius: 50%;
 	height: 38px;
 	width: 38px;
-	background: linear-gradient(315deg, rgba(29, 31, 35, 1) 0%, rgba(46, 53, 58, 1) 100%);
-	box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2), -4px -4px 8px 0px rgba(71, 71, 71, 0.3), 2px 2px 10px 0px rgba(46, 46, 46, 0.6);
-	border: 1px solid;
-	border-color: #25282c;
 }
 
 .inner_btn_prev.inner_btn_prev_light, .inner_btn_next.inner_btn_next_light {

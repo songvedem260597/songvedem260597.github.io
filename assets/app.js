@@ -530,8 +530,6 @@ const toggleMode = () => {
 
     const wrapPlayer = document.querySelector('.music-player-wrap')
     const container = document.querySelector('.container')
-    const innerBtnNext = document.querySelector('.inner_btn_next')
-    const innerBtnPrev = document.querySelector('.inner_btn_prev')
     const borderImg = document.querySelector('.img-action')
     const borderWrapperImg = document.querySelector('.border-wrapper-img-action')
     const nameCreator = document.querySelector('.vip-2')
@@ -573,8 +571,6 @@ const toggleMode = () => {
     nameCreator.classList[classListMethod]('vip-2-light')
     borderImgItem.classList[classListMethod]('border-light')
     container.classList[classListMethod]('bg-gray')
-    innerBtnNext.classList[classListMethod]('inner_btn_next_light')
-    innerBtnPrev.classList[classListMethod]('inner_btn_prev_light')
 
     elements.forEach((element) => toggleClass(element, lightModeClassNames, state.isLightMode))
     toggleNameSongItemClass(lyrics, 'color-gray', classListMethod)

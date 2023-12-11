@@ -70,6 +70,13 @@ let arraySongs = [
         lrc: '../assets/lrc/abcdefu.lrc',
     },
     {
+        name: 'Lạc trôi',
+        singer: 'Sơn Tùng MTP',
+        path: '../assets/mp3/lac_troi.mp3',
+        avatar: '../assets/avatar/lac_troi.jpg',
+        lrc: '../assets/lrc/lac_troi.lrc',
+    },
+    {
         name: 'Bạc Phận',
         singer: 'K-ICM x JACK (Masew Remix)',
         path: '../assets/mp3/bac_phan_remix.mp3',

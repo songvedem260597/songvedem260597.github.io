@@ -365,6 +365,18 @@ a {
 	box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2), -4px -4px 15px 0px rgba(154, 154, 154, 0.3), 2px 2px 20px 0px rgba(25, 25, 25, 0.6);
 }
 
+.btn-light {
+	box-shadow: -8px -8px 20px 0px #f5f5f599, -6px -6px 6px 0px #fafafa99, 8px 8px 20px #0001, 5px 5px 6px 0px #0001 !important;
+	background: #fff !important;
+}
+
+.light-mode .btn-state:before,
+.light-mode .btn-list:before,
+.light-mode .btn-heart::before,
+.light-mode .btn-close::before {
+	background: #fcfffc !important;
+}
+
 .btn-state:before, .btn-list:before {
 	content: '';
 	position: absolute;
@@ -633,9 +645,6 @@ a {
 	box-shadow: -1px -1px 2px 0.1px rgba(0, 0, 0, 0.2), 5px 5px 10px 0.1px rgba(0, 0, 0, 0.2);
 }
 
-.btn-state, .btn-list{
-	box-shadow: -8px -8px 20px 0px #fff9, -6px -6px 6px 0px #fff9, 8px 8px 20px #0001, 5px 5px 6px 0px #0001;
-}
 
 .btn-next, .btn-prev {
 	padding: 20px;

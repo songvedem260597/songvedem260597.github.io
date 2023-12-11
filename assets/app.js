@@ -524,9 +524,12 @@ const toggleMode = () => {
     state.isLightMode = !state.isLightMode
     changeStyleProgressBar()
     const btnPlay = document.querySelector('.btn-play')
-    const btnNext = document.querySelector('.btn-next')
     const btnLoop = document.querySelector('.btn-loop')
     const btnRandom = document.querySelector('.btn-random')
+    const btnList = document.querySelector('.btn-list')
+    const btnState = document.querySelector('.btn-state')
+    const btnClose = document.querySelector('.btn-close')
+    const btnHeart = document.querySelector('.btn-heart')
 
     const wrapPlayer = document.querySelector('.music-player-wrap')
     const container = document.querySelector('.container')
@@ -540,12 +543,23 @@ const toggleMode = () => {
     const musicList = document.querySelector('.music-list')
     const borderImgItem = document.querySelector('.img-action-small')
 
-    const elements = [document.body, document.querySelector('.btn-list'), document.querySelector('.btn-state'), document.querySelector('.btn-heart'), document.querySelector('.btn-close')]
+    const elements = [document.body]
     const lightModeClassNames = ['light-music-wrap', 'light-btn-wrap', 'light-text-color']
     const additionalClassNames = ['vip-2-light', 'light-music-wrap', 'inner_btn_prev_light', 'border-img-action-light', 'border-wrapper-img-action-light', 'btn-play-light']
 
     btnPlay.classList[classListMethod]('light-btn-play-wrap')
     btnPlay.classList[classListMethod]('btn-play-light')
+
+    btnList.classList[classListMethod]('btn-light')
+    btnState.classList[classListMethod]('btn-light')
+    btnClose.classList[classListMethod]('btn-light')
+    btnHeart.classList[classListMethod]('btn-light')
+
+    if (state.isLightMode) {
+        document.body.classList.add('light-mode')
+    } else {
+        document.body.classList.remove('light-mode')
+    }
 
     if (state.isLoop) {
         console.log(state.isLightMode)

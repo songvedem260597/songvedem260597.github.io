@@ -42,6 +42,13 @@ const state = {
 
 let arraySongs = [
     {
+        name: 'Cũng đành thôi',
+        singer: 'Đức Phúc',
+        path: '../assets/mp3/cung_danh_thoi.mp3',
+        avatar: '../assets/avatar/cung_danh_thoi.jpg',
+        lrc: '../assets/lrc/cung_danh_thoi.lrc',
+    },
+    {
         name: 'Bạc Phận',
         singer: 'K-ICM x JACK (Masew Remix)',
         path: '../assets/mp3/bac_phan_remix.mp3',

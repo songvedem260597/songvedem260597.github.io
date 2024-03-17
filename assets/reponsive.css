@@ -281,7 +281,6 @@
 @media only screen and (max-width: 400px) {
     .container {
         width: 100vw;
-        margin-top: 30px;
         padding-bottom: 450px;
         padding-top: 400px;
         height: 100vh;

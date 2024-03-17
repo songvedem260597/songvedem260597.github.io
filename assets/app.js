@@ -42,6 +42,13 @@ const state = {
 
 let arraySongs = [
     {
+        name: 'Tình cờ yêu em',
+        singer: 'Kuun Đức Nam ft. Linh Thộn',
+        path: '../assets/mp3/tinh_co_yeu_em.mp3',
+        avatar: '../assets/avatar/tinh_co_yeu_em.jpg',
+        lrc: '../assets/lrc/tinh_co_yeu_em.lrc',
+    },
+    {
         name: 'Cũng đành thôi',
         singer: 'Đức Phúc',
         path: '../assets/mp3/cung_danh_thoi.mp3',

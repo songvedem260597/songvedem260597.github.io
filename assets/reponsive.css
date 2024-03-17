@@ -281,116 +281,115 @@
 @media only screen and (max-width: 400px) {
     .container {
         width: 100vw;
-        margin-top: 100px;
+        margin-top: 30px;
         padding-bottom: 300px;
         padding-top: 400px;
-        margin-bottom: 100px;
+        margin-bottom: 400px;
     }
-}
 
-.music-player-wrap {
-    width: 350px;
-}
+    .music-player-wrap {
+        width: 350px;
+    }
 
-.btn-mode, .btn-list {
-    height: 38px;
-    width: 38px;
-}
+    .btn-mode, .btn-list {
+        height: 38px;
+        width: 38px;
+    }
 
-.title-playing p {
-    font-size: 0.9rem;
-}
+    .title-playing p {
+        font-size: 0.9rem;
+    }
 
-.wrap-now-playing {
-    padding-top: 40px;
-}
+    .wrap-now-playing {
+        padding-top: 40px;
+    }
 
-.wrap-time {
-    width: 100%;
-    font-size: 0.7rem;
-}
+    .wrap-time {
+        width: 100%;
+        font-size: 0.7rem;
+    }
 
-.music-play .avatar img {
-    width: 210px;
-    height: 210px;
-}
+    .music-play .avatar img {
+        width: 210px;
+        height: 210px;
+    }
 
-.img-shadow {
-    width: 210px;
-    height: 210px;
-}
+    .img-shadow {
+        width: 210px;
+        height: 210px;
+    }
 
-.music-play .info {
-    height: 140px;
-}
+    .music-play .info {
+        height: 140px;
+    }
 
-.music-play .music-control {
-    height: 110px;
-}
+    .music-play .music-control {
+        height: 110px;
+    }
 
-input[type=range]::-webkit-slider-runnable-track {
-    height: 5px;
-}
+    input[type=range]::-webkit-slider-runnable-track {
+        height: 5px;
+    }
 
-input[type=range]::-webkit-slider-thumb {
-    margin-top: -0.6rem;
-    height: 23px;
-    width: 23px;
-}
+    input[type=range]::-webkit-slider-thumb {
+        margin-top: -0.6rem;
+        height: 23px;
+        width: 23px;
+    }
 
-.music-play .music-control {
-    width: 100%;
-}
+    .music-play .music-control {
+        width: 100%;
+    }
 
-.music-play .music-control :nth-child(1) {
-    font-size: var(--icon--sm-400);
+    .music-play .music-control :nth-child(1) {
+        font-size: var(--icon--sm-400);
 
-}
+    }
 
-.music-play .music-control :nth-child(5) {
-    height: 20px;
-    width: 20px;
-    font-size: var(--icon--sm-400);
-}
+    .music-play .music-control :nth-child(5) {
+        height: 20px;
+        width: 20px;
+        font-size: var(--icon--sm-400);
+    }
 
-.music-play .music-control :nth-child(2) {
-    font-size: var(--icon--sm-400);
-}
+    .music-play .music-control :nth-child(2) {
+        font-size: var(--icon--sm-400);
+    }
 
-.music-play .music-control :nth-child(4) {
-    font-size: var(--icon--sm-400);
-}
+    .music-play .music-control :nth-child(4) {
+        font-size: var(--icon--sm-400);
+    }
 
-.music-play .info .name {
-    font-size: 1.3rem;
-}
+    .music-play .info .name {
+        font-size: 1.3rem;
+    }
 
-.music-play .music-control .btn-play {
-    height: 45px;
-    width: 45px;
-}
+    .music-play .music-control .btn-play {
+        height: 45px;
+        width: 45px;
+    }
 
-.music-play .music-control .btn-play i {
-    font-size: 0.9rem;
-    top: 0;
-}
+    .music-play .music-control .btn-play i {
+        font-size: 0.9rem;
+        top: 0;
+    }
 
-.copyright-vip-coder {
-    font-size: 0.8rem;
-    justify-content: space-around;
-}
+    .copyright-vip-coder {
+        font-size: 0.8rem;
+        justify-content: space-around;
+    }
 
-input[type=range]::-webkit-slider-thumb {
-    width: 18px !important;
-    height: 18px !important;
-    margin-top: -7px !important;
-}
+    input[type=range]::-webkit-slider-thumb {
+        width: 18px !important;
+        height: 18px !important;
+        margin-top: -7px !important;
+    }
 
-.music-list ul {
-    height: 320px;
-}
+    .music-list ul {
+        height: 320px;
+    }
 
-.name-song-acttion {
-    font-size: 0.8rem;
-}
+    .name-song-acttion {
+        font-size: 0.8rem;
+    }
 }

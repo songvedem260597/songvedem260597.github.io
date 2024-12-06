@@ -1,0 +1,168 @@
+:root {
+  --main-color: #00ffb3;
+  --yellow-color: rgb(255, 238, 0);
+  --bg-color: #222B31;
+  --nav-color: #afafaf;
+  --white-color: #fff;
+  --nav-bg: #111727;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto;
+  font-size: 1rem;
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-introduce {
+  position: absolute;
+  z-index: 1;
+  top: 10%;
+  color: var(--main-color);
+}
+
+input[type=range] {
+  height: 25px !important;
+  -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 2px !important;
+  cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  height: 12px !important;
+  width: 12px !important;
+  background: var(--white-color) !important;
+  cursor: pointer;
+  margin-top: -5px !important;
+  box-shadow: var(--main-color);
+}
+
+.nav-bar {
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: var(--nav-bg);
+}
+
+.nav-bar ul {
+  width: 80%;
+  margin: 0 auto;
+  list-style: none;
+  color: var(--nav-color);
+}
+
+.nav-bar ul li {
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.nav-bar ul li:hover {
+  background-color: var(--main-color);
+  cursor: pointer;
+  color: #fff;
+}
+
+.container-content {
+  position: relative;
+  margin-left: 200px;
+  height: 100%;
+  width: calc(100%-200px);
+  background: var(--bg-color);
+  flex-direction: column;
+}
+
+.bg-content {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.bg-content img {
+  width: 15vw;
+  margin: 0 20px 0 20px;
+  position: absolute;
+}
+
+.bg-content img:nth-child(2) {
+  right: 0;
+  transform: scaleX(-1);
+}
+
+.container-video {
+  width: 50vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.plyr__progress__buffer {
+  display: none;
+}
+
+.plyr__control {
+  border-radius: none !important;
+}
+
+.plyr__control {
+  color: var(--nav-color)
+}
+
+.plyr__control--overlaid, .plyr__control--overlaid:hover {
+  background: transparent !important;
+  border: 2px solid var(--white-color);
+  padding: 5px !important;
+}
+
+.plyr__control--overlaid svg {
+  width: 2rem !important;
+  height: 2rem !important;
+  color: var(--main-color);
+  z-index: 10;
+}
+.control-video {
+
+  color: var(--white-color);
+  text-align: center;
+  justify-content: space-between;
+}
+
+.list-video li {
+  list-style: none;
+}
+
+.control-video i {
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+.plyr--full-ui:hover .control-video{
+  display: none;
+}

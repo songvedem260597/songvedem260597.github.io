@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="shortcut icon" type="image/png" href="assets/image/Logo-mini.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Sharp" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Two+Tone" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/result.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css" />
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <script src="assets/js/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="https://kit.fontawesome.com/f9275dded9.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="login-form" id="login-form">
+        <div class="modal-body">
+            <div id="overlay"></div>
+            <div class="container" id="container_login">
+                <img class="bg-login" src="assets/image/bg-login.PNG" />
+                <button data-dismiss="modal" id="close_login_popup" class="close_login_popup"><span
+                        class="btn material-icons-outlined">
+                        close
+                    </span></button>
+                <div class="form-container sign-up-container">
+
+                    <form action="#">
+                        <h2>Tạo Tài Khoản</h2>
+                        <input type="text" placeholder="Username" />
+                        <input type="email" placeholder="Email" />
+                        <input type="password" placeholder="Password" />
+                        <input type="password" placeholder="Repeat Password" />
+                        <button class="btn btn-sign-up">Đăng Kí</button>
+                    </form>
+                </div>
+                <div class="form-container sign-in-container">
+                    <form action="#">
+                        <h2>Đăng Nhập</h2>
+                        <input type="email" placeholder="Username" />
+                        <input type="password" placeholder="Password" />
+                        <a href="#">Quên mật khẩu?</a>
+                        <button class="btn">Đăng Nhập</button>
+                    </form>
+                </div>
+                <div class="overlay-container">
+                    <div class="overlay">
+                        <div class="overlay-panel overlay-left">
+                            <h2>Chào mừng quay trở lại!</h2>
+                            <p>Khám phá và tận hưởng nhiều âm nhạc hơn</p>
+                            <button class="ghost btn" id="signIn">Đăng Nhập</button>
+                        </div>
+                        <div class="overlay-panel overlay-right">
+                            <h2>Xin chào!</h2>
+                            <p>Tham gia với chúng tôi</p>
+                            <button class="ghost btn" id="signUp">Đăng Kí</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="app" class="container-app">
+        <div class="overlay-nav-bar-mobile"></div>
+        <!--NAVBAR-->
+        <div class="ms-nav-bar" id="nav-bar">
+            <div id="logo" class="ms-logo">
+                <img class="logo-desktop" src="assets/image/Logo.png" width="150" />
+                <img class="logo-mobile" src="assets/image/Logo-mini.png" width="50" height="50" />
+                <img class="logo-tablet" src="assets/image/Logo-mini.png" width="50" height="50" />
+            </div>
+            <ul class="nav-bar-top">
+                <a href="index-user.html">
+                    <li><span class="material-icons-outlined">album</span>
+                        <p>Cá Nhân</p>
+                    </li>
+                </a>
+                <a href="index.html">
+                    <li><span class="material-icons-outlined">graphic_eq</span>
+                        <p>Trang Chủ</p>
+                    </li>
+                </a>
+                <a href="index-bxh.html">
+                    <li><span class="material-icons-outlined">equalizer</span>
+                        <p>BXH</p>
+                    </li>
+                </a>
+                <a href="index-song.html">
+                    <li><span class="material-icons-outlined">music_note</span>
+                        <p>Nhạc Mới</p>
+                    </li>
+                </a>
+                <a href="index-artist.html">
+                    <li><span class="material-icons-outlined">people_outline</span>
+                        <p>Nghệ Sĩ</p>
+                    </li>
+                </a>
+            </ul>
+            <div class="hr-nav-bar"></div>
+            <ul class="nav-bar-bottom">
+                <a href="index-top100.html">
+                    <li><span class="material-icons-outlined">show_chart</span>
+                        <p>Top 100</p>
+                    </li>
+                </a>
+                <a href="index-category.html">
+                    <li><span class="material-icons-outlined">library_books</span>
+                        <p>Thể loại</p>
+                    </li>
+                </a>
+                <a href="#">
+                    <li><span class="material-icons-outlined login-mobile">
+                            login
+                        </span>
+                    </li>
+                </a>
+            </ul>
+            <div class="suggesstion-login">
+                <p>Tham gia ngay để khám phá những playlist dành riêng cho chính bạn.</p>
+                <button id="join-now" class="btn btn-gradient">Tham Gia</button>
+
+            </div>
+        </div>
+        <!--CONTENT-->
+        <div class="ms-content">
+            <div id="header" class="ms-wrapper-header">
+                <div class="ms-header">
+                    <div id="search" class="search-container">
+                        <button class="ms-btn-search">
+                            <span class="material-icons-outlined">
+                                search
+                            </span></button>
+                        <div class="input-wrapper"><input type="text" id="input-search" class="form-control"
+                                placeholder="Nhập tên bài hát, nghệ sĩ…" value=""></div>
+                    </div>
+                    <div class="ms-header-control">
+                        <div class="wrapper-header-control">
+                            <a id="signUpHeader" class="btn sign-up-trigger" href="#" data-target="#login"
+                                data-toggle="modal">Đăng Ký</a>
+                            <a id="signInHeader" class="btn login-trigger" href="#" data-target="#login"
+                                data-toggle="modal">Đăng Nhập</a>
+                            <img src="assets/image/default.jpg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ms-wrapper-mobile">
+                <div class="ms-result-content">
+                    <div class="ms-result-bg">
+                        <div class="blur-song-bg"></div>
+                        <div class="blur-song-bg-1"></div>
+                        <img class="result-profile-bg" src="assets/image/bg-search.jpg" />
+                        <h1 class="title-result-song text-title"># KẾT QUẢ TÌM KIẾM</h1>
+                    </div>
+                    <div class="ms-result-search">
+                        <p class="title-suggesstion ">Bài Hát</p>
+                        <div class="ms-list-song">
+                            <div class="wrap-list-song">
+                                <ul class="list-music list-music-result">
+                                    <li class="list-music-item" data-music="assets/mp3/nevada.mp3"
+                                        data-lrc="assets/lyrics/do-toc-2-remix.lrc" data-name="Nevada"
+                                        data-creator="Vicetone" data-img="assets/image/nevada-banner.jpg"
+                                        data-avatar="assets/image/Avata-song-1.jpg" data-index="0">
+                                        <div class="equalizer-and-number">
+                                            <p class="number-item">01</p>
+                                        </div>
+                                        <div class="list-music-item-info">
+                                            <div class="avatar">
+                                                <div class="btn-play"><span class="material-icons">
+                                                        play_arrow
+                                                    </span></div>
+                                                <div class="over-lay-item-info"></div>
+                                                <img src="assets/image/Avata-song-1.jpg">
+                                            </div>
+                                            <div class="item-info">
+                                                <div class="name">Nevada</div>
+                                                <div class="creator">Vicetone</div>
+                                            </div>
+                                            <div class="item-control">
+
+                                                <span class="material-icons-outlined">
+                                                    playlist_add
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-music-item" data-music="assets/mp3/attention.mp3"
+                                        data-lrc="assets/lyrics/do-toc-2-remix.lrc" data-name="Attention"
+                                        data-creator="Charlie Puth" data-img="assets/image/nevada-banner.jpg"
+                                        data-avatar="assets/image/Avatar-song-2.png" data-index="1">
+                                        <div class="equalizer-and-number">
+                                            <p class="number-item">02</p>
+                                        </div>
+
+                                        <div class="list-music-item-info">
+                                            <div class="avatar">
+                                                <div class="btn-play"><span class="material-icons">
+                                                        play_arrow
+                                                    </span></div>
+                                                <div class="over-lay-item-info"></div>
+                                                <img src="assets/image/Avatar-song-2.png">
+                                            </div>
+                                            <div class="item-info">
+                                                <div class="name">Attention</div>
+                                                <div class="creator">Charlie Puth</div>
+                                            </div>
+                                            <div class="item-control">
+
+                                                <span class="material-icons-outlined">
+                                                    playlist_add
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-music-item" class="list-music-item"
+                                        data-music="assets/mp3/alone.mp3" data-lrc="assets/lyrics/do-toc-2-remix.lrc"
+                                        data-name="Alone" data-creator="Marshmello"
+                                        data-img="assets/image/nevada-banner.jpg"
+                                        data-avatar="assets/image/Avata-song-3.jpg" data-index="2">
+                                        <div class="equalizer-and-number">
+                                            <p class="number-item">03</p>
+                                        </div>
+
+                                        <div class="list-music-item-info">
+                                            <div class="avatar">
+                                                <div class="btn-play"><span class="material-icons">
+                                                        play_arrow
+                                                    </span></div>
+                                                <div class="over-lay-item-info"></div>
+                                                <img src="assets/image/Avata-song-3.jpg">
+                                            </div>
+                                            <div class="item-info">
+                                                <div class="name">Alone</div>
+                                                <div class="creator">Marshmello</div>
+                                            </div>
+                                            <div class="item-control">
+
+                                                <span class="material-icons-outlined">
+                                                    playlist_add
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-music-item" data-music="assets/mp3/waiting-for-love.mp3"
+                                        data-lrc="assets/lyrics/do-toc-2-remix.lrc" data-name="Waiting For Love"
+                                        data-creator="Avicii" data-img="assets/image/nevada-banner.jpg"
+                                        data-avatar="assets/image/Avata-song-4.jpg" data-index="3">
+                                        <div class="equalizer-and-number">
+                                            <p class="number-item">04</p>
+                                        </div>
+
+                                        <div class="list-music-item-info">
+                                            <div class="avatar">
+                                                <div class="btn-play"><span class="material-icons">
+                                                        play_arrow
+                                                    </span></div>
+                                                <div class="over-lay-item-info"></div>
+                                                <img src="assets/image/Avata-song-4.jpg">
+                                            </div>
+                                            <div class="item-info">
+                                                <div class="name">Waiting For Love</div>
+                                                <div class="creator">Avicii</div>
+                                            </div>
+                                            <div class="item-control">
+
+                                                <span class="material-icons-outlined">
+                                                    playlist_add
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ms-sugesstion-song">
+                            <p class="title-suggesstion">Playlist</p>
+                            <div class="owl-carousel carousel-suggesstion-song">
+                                <div class="item">
+                                    <div class="wrapper-suggesstion">
+                                        <div class="wraper-equalizer">
+                                            <button class="equalizer ">
+                                                <span class="eq1"></span>
+                                                <span class="eq2"></span>
+                                                <span class="eq3"></span>
+                                            </button>
+                                        </div>
+                                        <div class="overlay"></div>
+                                        <img
+                                            src="https://photo-resize-zmp3.zadn.vn/w320_r1x1_jpeg/cover/7/2/f/6/72f66c005fa69fae38ddb07c34d49486.jpg" />
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="wrapper-suggesstion">
+                                        <div class="wraper-equalizer">
+                                            <button class="equalizer">
+                                                <span class="eq1"></span>
+                                                <span class="eq2"></span>
+                                                <span class="eq3"></span>
+                                            </button>
+                                        </div>
+                                        <div class="overlay"></div>
+                                        <img
+                                            src="https://photo-resize-zmp3.zadn.vn/w320_r1x1_jpeg/cover/a/7/5/7/a75731d04aa9876440572e3d76853d52.jpg" />
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="wrapper-suggesstion">
+                                        <div class="wraper-equalizer">
+                                            <button class="equalizer">
+                                                <span class="eq1"></span>
+                                                <span class="eq2"></span>
+                                                <span class="eq3"></span>
+                                            </button>
+                                        </div>
+                                        <div class="overlay"></div>
+                                        <img
+                                            src="https://photo-resize-zmp3.zadn.vn/w320_r1x1_jpeg/cover/1/4/d/5/14d592977f3500b02e24e2c031b3bc61.jpg" />
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <div class="wrapper-suggesstion">
+                                        <div class="wraper-equalizer">
+                                            <button class="equalizer">
+                                                <span class="eq1"></span>
+                                                <span class="eq2"></span>
+                                                <span class="eq3"></span>
+                                            </button>
+                                        </div>
+                                        <div class="overlay"></div>
+                                        <img
+                                            src="https://avatar-ex-swe.nixcdn.com/playlist/2018/09/13/2/6/2/f/1536805686434.jpg" />
+                                    </div>
+                                </div>
+
+                                <div class="item">
+                                    <div class="wrapper-suggesstion">
+                                        <div class="wraper-equalizer">
+                                            <button class="equalizer">
+                                                <span class="eq1"></span>
+                                                <span class="eq2"></span>
+                                                <span class="eq3"></span>
+                                            </button>
+                                        </div>
+                                        <div class="overlay"></div>
+                                        <img src="assets/image/hit-quoc-dan.jpg" />
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="wrapper-suggesstion">
+                                        <div class="wraper-equalizer">
+                                            <button class="equalizer">
+                                                <span class="eq1"></span>
+                                                <span class="eq2"></span>
+                                                <span class="eq3"></span>
+                                            </button>
+                                        </div>
+                                        <div class="overlay"></div>
+                                        <img
+                                            src="https://photo-resize-zmp3.zadn.vn/w320_r1x1_jpeg/cover/6/5/7/3/6573250283b579c3b0ecc3646305ac8a.jpg" />
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="wrapper-suggesstion">
+                                        <div class="wraper-equalizer">
+                                            <button class="equalizer">
+                                                <span class="eq1"></span>
+                                                <span class="eq2"></span>
+                                                <span class="eq3"></span>
+                                            </button>
+                                        </div>
+                                        <div class="overlay"></div>
+                                        <img
+                                            src="https://photo-resize-zmp3.zadn.vn/w320_r1x1_jpeg/cover/7/2/0/0/7200f823d087c9f8b89129cef845e253.jpg" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ms-favorite-artist">
+                            <p class="title-suggesstion">Nghệ Sĩ</p>
+                            <div class="owl-carousel carousel-favorite-artist">
+                                <div class="item">
+
+                                    <div class="wrapper-artist">
+                                        <div class="overlay"></div>
+                                        <span class="material-icons">play_arrow</span>
+                                        <img
+                                            src="https://avatar-ex-swe.nixcdn.com/singer/avatar/2019/12/02/f/d/5/6/1575258945135_600.jpg" />
+
+                                    </div>
+                                    <div class="name-artist">Hòa Minzy</div>
+
+                                </div>
+                                <div class="item">
+
+                                    <div class="wrapper-artist">
+                                        <div class="overlay"></div>
+                                        <span class="material-icons">play_arrow</span>
+                                        <img src="assets/image/dj-marshmello-road-to-ultra-hong-kong-hk-edm.jpg"></img>
+                                    </div>
+                                    <div class="name-artist">Marshmello</div>
+                                </div>
+                                <div class="item">
+
+                                    <div class="wrapper-artist">
+                                        <div class="overlay"></div>
+                                        <span class="material-icons">play_arrow</span>
+                                        <img
+                                            src="https://avatar-ex-swe.nixcdn.com/singer/avatar/2019/09/12/c/3/c/7/1568253936065_600.jpg" />
+                                    </div>
+                                    <div class="name-artist">Binz</div>
+                                </div>
+
+                                <div class="item">
+
+                                    <div class="wrapper-artist">
+                                        <div class="overlay"></div>
+                                        <span class="material-icons">play_arrow</span>
+                                        <img
+                                            src="https://avatar-ex-swe.nixcdn.com/singer/avatar/2016/09/28/b/3/d/c/1475049690234_600.jpg" />
+                                    </div>
+                                    <div class="name-artist">The Fat Rat</div>
+                                </div>
+
+                                <div class="item">
+
+                                    <div class="wrapper-artist">
+                                        <div class="overlay"></div>
+                                        <span class="material-icons">play_arrow</span>
+                                        <img
+                                            src="https://avatar-ex-swe.nixcdn.com/singer/avatar/2021/05/12/7/d/c/b/1620802736418_600.jpg" />
+                                    </div>
+                                    <div class="name-artist">Sơn Tùng MTP</div>
+                                </div>
+
+
+                                <div class="item">
+
+                                    <div class="wrapper-artist">
+                                        <div class="overlay"></div>
+                                        <span class="material-icons">play_arrow</span>
+                                        <img
+                                            src="https://avatar-ex-swe.nixcdn.com/singer/avatar/2019/10/29/a/a/d/4/1572318457703_600.jpg" />
+                                    </div>
+                                    <div class="name-artist">Masew</div>
+                                </div>
+
+
+                                <div class="item">
+
+                                    <div class="wrapper-artist">
+                                        <div class="overlay"></div>
+                                        <span class="material-icons">play_arrow</span>
+                                        <img
+                                            src="https://avatar-ex-swe.nixcdn.com/singer/avatar/2020/08/06/9/a/7/b/1596692465856_600.jpg" />
+                                    </div>
+                                    <div class="name-artist">Đen Vâu</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="ms-footer">
+                    <div class="footer-contact">
+                        <div class="wrapper-bg-contact">
+                            <div class="wrapper-item-contact">
+                                <div class="bg-footer-alpha"></div>
+                                <div class="wrapper-item-footer">
+                                    <div class="about-us item-contact">
+                                        <ul>
+                                            <li>
+                                                <p class="title-footer">Về chúng tôi</p>
+                                            </li>
+                                            <li>
+                                                <div class="hr-footer"></div>
+                                            </li>
+                                            <li><span class="material-icons-outlined">
+                                                    stay_primary_portrait
+                                                </span>036-282-3931</li>
+                                            <li><span class="material-icons-outlined">
+                                                    lightbulb
+                                                </span>info@iamrocklee.org</li>
+                                            <li><span class="material-icons-outlined">
+                                                    school
+                                                </span>TayNguyen University, Buon Ma Thuot, DakLak.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="support-client item-contact">
+
+
+                                        <ul>
+                                            <li>
+                                                <p class="title-footer">Hỗ trợ khách hàng</p>
+                                            </li>
+                                            <li>
+                                                <div class="hr-footer"></div>
+                                            </li>
+                                            <li>Email: hotro@svdmusic.com</li>
+                                            <li>Đường dây nóng: 1900 1997</li>
+                                        </ul>
+                                    </div>
+                                    <div class="contact-adv item-contact">
+                                        <ul>
+                                            <li>
+                                                <p class="title-footer">Liên hệ quảng cáo</p>
+                                            </li>
+                                            <li>
+                                                <div class="hr-footer"></div>
+                                            </li>
+                                            <li>Hotline: (036) 282 3931</li>
+                                            <li>Email: hoangducbmt1997@gmail.com</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-copyright">
+                        <div class="wrapper-footer-copyright container-content">
+                            <div class="wrapper-footer-info footer-item">
+                                <p>© 2021 SVD Music. Copyright by<a href="#"> songvedem</a>
+                                </p>
+                            </div>
+                            <div class="wrapper-icon-footer footer-item">
+                                <ul>
+                                    <li>
+                                        <img src="assets/image/t_ic_facebook.png" width="25px" />
+                                    </li>
+                                    <li>
+                                        <img src="assets/image/t_ic_instagram.png" width="25px" />
+                                    </li>
+                                    <li>
+                                        <img src="assets/image/t_ic_tiktok.png" width="25px" />
+                                    </li>
+                                    <li>
+                                        <img src="assets/image/t_ic_twitter.png" width="25px" />
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="wrapper-privacy footer-item">
+                                <p>© SVD Corp. All rights reserved</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/app.js" type="text/javascript"></script>
+    <script src="assets/js/control.js" type="text/javascript"></script>
+</body>
+
+</html>

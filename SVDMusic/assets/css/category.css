@@ -1,0 +1,62 @@
+.wrapper-list-category-song{
+    width: 90%;
+    margin: 0 auto;
+}
+.list-category-bg{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+.list-category-bg img{
+    width: 100%;
+    opacity: 0.8;
+}
+.ms-category-song .item{
+    position: relative;
+}
+.ms-category-song .info-mv-song{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 200px;
+    margin-left: -100px;
+    margin-top: -20px;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.ms-category-song .name{
+    font-size: 1.2rem !important;
+}
+.ms-category-song img{
+    opacity: 0.7;
+}
+.list-category-bg img{
+    position: absolute;
+}
+.title-category-song{
+    position: absolute;
+    z-index: 5;
+    color: var(--white-color);
+    text-align: center;
+    width: 100%;
+    bottom: 120px;
+}
+.ms-list-category-song .blur-song-bg{
+    position: absolute;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+180deg,var(--alpha-color),var(--bg-index));
+    z-index: 1;
+    top: 0;
+}
+.ms-list-category-song .blur-song-bg-1{
+    position: absolute;
+    background-image: linear-gradient(
+        180deg,hsla(0,0%,100%,0) 30%,var(--bg-index));
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+}

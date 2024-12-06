@@ -1,0 +1,82 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Movie Player</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap"
+    rel="stylesheet">
+  <script src="https://kit.fontawesome.com/f9275dded9.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="plyr.min.css" />
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+  <div class="nav-bar">
+    <div class="logo flex-center">
+      <img src="img/Logo3.png" width="150" />
+    </div>
+    <ul>
+      <li>Cá Nhân</li>
+      <li>Trang Chủ</li>
+      <li>TOP Movie</li>
+      <li>Xem nhiều</li>
+      <li>TOP Rating</li>
+    </ul>
+  </div>
+
+  <div class="container-content flex-center">
+    <h1 class="title-introduce flex-center"> Movie Player</h1>
+    <div class="container-video ">
+
+      <video controls crossorigin playsinline data-poster="/img/venom.jpeg" id="player" width="100%">
+        <source id="source-1080" src="" type="video/mp4" size="1080" />
+        <source id="source-720" src="" type="video/mp4" size="720" />
+        <source id="source-480" src="" type="video/mp4" size="480" />
+        <a href="video/venom-2-1080p.mp4" download>Download</a>
+      </video>
+    </div>
+    <div class="control-video">
+      <i class="fa fa-backward btn-prev"></i>
+      <i class="fa fa-forward btn-next"></i>
+    </div>
+    <ul class="list-video">
+      <li class="list-video-item" data-src-1080="./video/video-1.mp4" data-src-720="./video/video-1.mp4" data-src-480="./video/video-1.mp4"></li>
+      <li class="list-video-item" data-src-1080="./video/video-2.mp4" data-src-720="./video/video-2.mp4" data-src-480="./video/video-2.mp4"></li>
+      <li class="list-video-item" data-src-1080="./video/video-3.mp4" data-src-720="./video/video-3.mp4" data-src-480="./video/video-3.mp4"></li>
+    </ul>
+
+  </div>
+
+
+  <script src="plyr.min.js"></script>
+  <script src="app.js"></script>
+  <script>
+    const player = new Plyr('#player', {
+      controls: [
+        'play-large',
+        'play',
+        'progress',
+        'current-time',
+        'settings',
+        'volume',
+        'mute',
+        'pip',
+        'airplay',
+        'fullscreen'],
+      loadSprite: true,
+      iconPrefix: 'icon',
+      iconUrl: './sprite/icon.svg',
+    }
+
+    );
+  </script>
+
+</body>
+
+</html>

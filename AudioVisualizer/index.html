@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Audio Visualizer</title>
+	<link rel="shortcut icon" type="image/png"
+		href="assets/img/logo.png" />
+	<link rel="stylesheet" href="./style.css">
+	<link rel="stylesheet" href="./reponsive.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Alata:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+</head>
+
+<body>
+	<div class="container-app flex-center">
+		<div class="warning-tb-mb flex-center">
+			<p>AUDIO API NOT SUPPORT ON TABLET AND MOBILE </p>
+		</div>
+		<div class="wrap-title flex-center">
+			<p class="content-title title-smal">Naruto</p>
+			<p class="content-title">Audio Visualizer</p>
+		</div>
+		<video id="video" autoplay muted loop>
+		</video>
+		<div id="equalizer" class=" flex-center">
+			<div id="bar1" class="bar hidden"></div>
+			<div id="bar2" class="bar hidden"></div>
+			<div id="bar3" class="bar hidden"></div>
+			<div id="bar4" class="bar hidden"></div>
+			<div id="bar5" class="bar hidden"></div>
+			<div id="bar6" class="bar hidden"></div>
+			<div id="bar7" class="bar hidden"></div>
+			<div id="bar8" class="bar">
+				<span class="actividad-number-circle pulsate"></span>
+				<span class="actividad-number-circle pulsateExt"></span>
+			</div>
+			<div id="bar9" class="bar "></div>
+			<div id="bar10" class="bar">
+			
+				<img class="glitch-image bg-main" src="rinnegan.png">
+				<img class="glitch-image bg-main" src="rinnegan.png" />
+				<img class="glitch-image bg-main" src="rinnegan.png" />
+				<img class="glitch-image bg-main" src="rinnegan.png" />
+				<img class="glitch-image bg-main" src="rinnegan.png" />
+				<img class="glitch-image bg-main" src="rinnegan.png" />
+			</div>
+			<div id="bar11" class="bar hidden"></div>
+			<div id="bar12" class="bar hidden"></div>
+			<div id="bar13" class="bar hidden"></div>
+			<div id="bar14" class="bar hidden"></div>
+			<div id="bar15" class="bar hidden"></div>
+			<div id="bar16" class="bar hidden"></div>
+		</div>
+		<div class="control-music">
+			<i class="fas fa-backward btn-prev"></i>
+			<i class="fas fa-play btn-play"></i>
+			<i class="fas fa-forward btn-next"></i>
+		</div>
+		<ul class="list-music">
+			<li class="list-music-item"  data-img="" data-music="./assets/mp3/naruto-1.mp3"
+				data-video="./assets/mp4/video-0.mp4"></li>
+			<li class="list-music-item" data-img="" data-music="./assets/mp3/naruto-2.mp3"
+				data-video="./assets/mp4/video-1.mp4"></li>
+			<li class="list-music-item"  data-img="" data-music="./assets/mp3/naruto-3.mp3"
+				data-video="./assets/mp4/video-8.mp4">
+			</li>
+			<li class="list-music-item"  data-img="" data-music="./assets/mp3/naruto-4.mp3"
+				data-video="./assets/mp4/video-3.mp4">
+			</li>
+			<li class="list-music-item"  data-img="" data-music="./assets/mp3/naruto-5.mp3"
+				data-video="./assets/mp4/video-4.mp4">
+			</li>
+		</ul>
+	</div>
+
+	<!-- partial -->
+	<script src="./script.js"></script>
+
+</body>
+
+</html>

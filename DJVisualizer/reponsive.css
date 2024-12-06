@@ -1,0 +1,20 @@
+/*-Orther screen-*/
+@media only screen and (min-width: 1024px) {
+    .warning-tb-mb{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1023px) {
+    #video{
+        height: 100vh;
+    }
+
+    #bar10 {
+        height: 150px;
+        width: 150px;
+    }
+}
+
+
+

@@ -40,6 +40,7 @@
 <body>
   <div id="content">
     <h1>Welcome!</h1>
+    <button id="fullscreen-btn">Go Full Screen</button>
     <p>Scroll down to see the effect of hiding the navigation bar.</p>
   </div>
 
@@ -65,6 +66,11 @@
     }
   </script>
 
+
+</body>
+
+
+
 <script>
     // Hàm để yêu cầu chế độ toàn màn hình
     function enterFullscreen() {
@@ -80,11 +86,9 @@
             docElm.msRequestFullscreen();
         }
     }
-
-    // Khi trang được tải, tự động yêu cầu toàn màn hình
-    window.onload = function() {
+    // Lắng nghe sự kiện click vào nút
+    document.getElementById('fullscreen-btn').addEventListener('click', function() {
         enterFullscreen();
-    };
+    });
 </script>
-</body>
 </html>

@@ -1,2 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#000000">
+  <link rel="manifest" href="manifest.json">
+  <title>Hide Navigation Bar</title>
+  <style>
+    /* CSS để ẩn thanh điều hướng khi cuộn */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100vh; /* Chiều cao toàn màn hình */
+      overflow-x: hidden; /* Tắt cuộn ngang */
+      scroll-behavior: smooth; /* Cuộn mượt mà */
+    }
+    body {
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    #content {
+      height: 200vh; /* Tăng chiều cao để kiểm tra cuộn */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    h1 {
+      margin: 0;
+      font-size: 24px;
+      color: #333;
+    }
+    p {
+      font-size: 16px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div id="content">
+    <h1>Welcome!</h1>
+    <p>Scroll down to see the effect of hiding the navigation bar.</p>
+  </div>
 
+  <script>
+    // Kiểm tra và sử dụng visualViewport nếu được hỗ trợ
+    if ('visualViewport' in window) {
+      const viewport = window.visualViewport;
+
+      // Điều chỉnh chiều cao body theo viewport
+      viewport.addEventListener('resize', () => {
+        document.body.style.height = `${viewport.height}px`;
+      });
+
+      // Ẩn thanh điều hướng khi cuộn
+      viewport.addEventListener('scroll', () => {
+        window.scrollTo(0, 0);
+      });
+    } else {
+      // Phương pháp cuộn để ẩn thanh điều hướng trên các thiết bị không hỗ trợ visualViewport
+      document.addEventListener('scroll', function () {
+        window.scrollTo(0, 1); // Cuộn một pixel để ẩn thanh điều hướng
+      });
+    }
+  </script>
+</body>
 </html>
